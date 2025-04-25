@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'ABCDiatype', sans-serif;
+}
+
+button{
+    height: 100vh;
+    width: 50vw;
+    background-color: transparent;
+    border: none;
+}
+.w3-display-left:hover{
+    cursor:w-resize;
+}
+.w3-display-right:hover{
+    cursor:e-resize;
+}
+
+.mySlides {
+    display:none;
+    height: 100vh;
+    width: auto;
+    object-fit:cover;
+}
+
+.w3-content{
+    align-items: center;
+    justify-content: center;
+}
+
+.w3-button{
+    position: absolute;
+    top: 50vh;
+    transform: translate(0,-50%);
+}
+.w3-display-left{
+    left: 0;
+}
+.w3-display-right{
+    right: 0;
+}
+
+
+@font-face {
+    font-family: ABCDiatype;
+    src: url(ABCDiatypeVariable.ttf);
+  }
+
+.heading{
+    color: rgb(255, 255, 255); 
+    mix-blend-mode: difference;
+    
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    gap: 2rem;
+
+    z-index: +10;
+    top: 1.5rem;
+    animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.subheading{
+    position: absolute;
+}
+#name{
+    left:2rem;
+}
+#enter{
+   right: 2rem;
+}
+
+
+
