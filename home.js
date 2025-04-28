@@ -1,7 +1,7 @@
-document.querySelectorAll( '.clickable').forEach( clickable => {
-  clickable.addEventListener('click', ( ) => {
+document.querySelectorAll('.clickable').forEach(clickable => {
+  clickable.addEventListener('click', () => {
     const targetId = clickable.getAttribute('data-target');
-    const targetDiv = document.getElementById( targetId );
+    const targetDiv = document.getElementById(targetId);
     targetDiv.style.display = targetDiv.style.display === 'block' ? 'none' : 'block';
     // targetDiv.style.visibility = targetDiv.style.visibility === 'visible' ? 'hidden' : 'visible';
 
@@ -9,8 +9,8 @@ document.querySelectorAll( '.clickable').forEach( clickable => {
 });
 
 
-const projectFilters = document.querySelectorAll( '.filter-menu input[name="filter"]' );
-const projectDivs = document.querySelectorAll( '.image-container .project-cover' );
+const projectFilters = document.querySelectorAll('.filter-menu input[name="filter"]');
+const projectDivs = document.querySelectorAll('.image-container .project-cover');
 
 
 projectDivs.forEach(projectDiv => {
@@ -37,52 +37,55 @@ projectDivs.forEach(projectDiv => {
 const updateFilter = event => {
   const filterValue = event.currentTarget.value;
 
-  projectDivs.forEach( projectDiv => {
-    const highlightProject = projectDiv.classList.contains( filterValue );
+  projectDivs.forEach(projectDiv => {
+    const highlightProject = projectDiv.classList.contains(filterValue);
 
-    projectDiv.classList.toggle( 'highlighted', highlightProject );
-    projectDiv.classList.remove( 'expanded' );
-  } );
+    projectDiv.classList.toggle('highlighted', highlightProject);
+    projectDiv.classList.remove('expanded');
+  });
 }
 
-projectFilters.forEach( projectFilter => {
+projectFilters.forEach(projectFilter => {
   const filterValue = projectFilter.value;
 
   let projectsForFilter;
-  if ( filterValue == 'show-all' ) {
-    projectsForFilter = document.querySelectorAll( `.image-container .project-cover` );
+  if (filterValue == 'show-all') {
+    projectsForFilter = document.querySelectorAll(`.image-container .project-cover`);
   } else {
-    projectsForFilter = document.querySelectorAll( `.image-container .project-cover.${ filterValue }` );
+    projectsForFilter = document.querySelectorAll(`.image-container .project-cover.${filterValue}`);
   }
 
   const filterCount = projectsForFilter.length;
   const filterCountOutput = projectFilter.nextElementSibling.nextElementSibling;
-  filterCountOutput.innerHTML = `[${ filterCount}]`;
+  filterCountOutput.innerHTML = `[${filterCount}]`;
 
-  projectFilter.addEventListener( 'change', updateFilter );
-} );
+  projectFilter.addEventListener('change', updateFilter);
+});
 
 // 
-const slideshows = document.querySelectorAll( '.slideshow' );
-slideshows.forEach( slideshow => {
+const slideshows = document.querySelectorAll('.slideshow');
+slideshows.forEach(slideshow => {
   const parent = slideshow.parentNode;
-  const counter = parent.querySelector( '.caption.preview-count' );
+  const counter = parent.querySelector('.caption.preview-count');
 
-  const images = slideshow.querySelectorAll( 'img, video' );
-  console.log( slideshow, counter, images.length);
+  const images = slideshow.querySelectorAll('img, video');
+  console.log(slideshow, counter, images.length);
 
-  counter.innerText = `1/${ images.length }`;
+  counter.innerText = `1/${images.length}`;
 
-  
-  slideshow.addEventListener( 'scroll', event => {
-    const scrollPercentage = slideshow.scrollLeft / ( ( images.length - 1 ) * slideshow.offsetWidth );
+
+  slideshow.addEventListener('scroll', event => {
+    const scrollPercentage = slideshow.scrollLeft / ((images.length - 1) * slideshow.offsetWidth);
     //console.log( scrollPercentage )
-    const imageIndex = Math.min( 1 + Math.floor( scrollPercentage * images.length ), images.length );
+    const imageIndex = Math.min(1 + Math.floor(scrollPercentage * images.length), images.length);
     //console.log( imageIndex, images.length );
 
-    counter.innerText = `${ imageIndex }/${ images.length }`;
+    counter.innerText = `${imageIndex}/${images.length}`;
 
-  } );
-} );
+  });
+});
+
+// 
+
 
 
