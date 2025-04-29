@@ -215,6 +215,10 @@ body {
             display: none;
             margin-bottom: 4rem;
         }
+        .profile-pic{
+            width: 100%;
+            margin-top: 1.5rem;
+        }
         .open-text{
             font-style: normal;
             animation: blinking 2s ease-in forwards;
