@@ -7,6 +7,7 @@ body{
     height: 100vh;
     overflow: hidden;
     font-family: 'ABCDiatype', sans-serif;
+    /* font-weight: 300; */
 }
 
 button{
@@ -23,16 +24,17 @@ button{
 }
 
 .mySlides {
-    display:none;
+    display: none;
     height: 100vh;
     width: 100%;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 .w3-content{
     align-items: center;
     justify-content: center;
 }
+
 
 .w3-button{
     position: absolute;
@@ -53,7 +55,7 @@ button{
   }
 
 .heading{
-    color: rgb(255, 255, 255); 
+    font-size: 15px;
     mix-blend-mode: difference;
     
     width: 100vw;
@@ -74,9 +76,16 @@ button{
 }
 #name{
     left:2rem;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    color: white;
 }
 #enter{
    right: 2rem;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255); 
 }
 
 .preview-count{
@@ -86,20 +95,7 @@ button{
     position: absolute;
     bottom: 1.5rem;
     left: 2rem;
-    font-size: 25px;
-    font-weight: 200;
-}
-
-/* .slide-caption{
-    color: rgb(255, 255, 255); 
-    mix-blend-mode: difference;
     font-size: 15px;
+    width: 90vw;
     letter-spacing: 1px;
-
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-inline: 2rem;
-    margin: 1.5rem;
-} */
-
+}

@@ -2,8 +2,11 @@ document.querySelectorAll('.clickable').forEach(clickable => {
   clickable.addEventListener('click', () => {
     const targetId = clickable.getAttribute('data-target');
     const targetDiv = document.getElementById(targetId);
+
+    const isVisible = targetDiv.style.display === 'block';
+
     targetDiv.style.display = targetDiv.style.display === 'block' ? 'none' : 'block';
-    // targetDiv.style.visibility = targetDiv.style.visibility === 'visible' ? 'hidden' : 'visible';
+    clickable.style.opacity = isVisible ? '1' : '0.5';
 
   });
 });
@@ -68,7 +71,7 @@ slideshows.forEach(slideshow => {
   const parent = slideshow.parentNode;
   const counter = parent.querySelector('.caption.preview-count');
 
-  const images = slideshow.querySelectorAll('img, video');
+  const images = slideshow.querySelectorAll('img, video, iframe');
   console.log(slideshow, counter, images.length);
 
   counter.innerText = `1/${images.length}`;
@@ -84,8 +87,6 @@ slideshows.forEach(slideshow => {
 
   });
 });
-
-// 
 
 
 

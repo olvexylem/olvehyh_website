@@ -19,5 +19,7 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
 
   // ✅ Update the preview count when showing a slide
-  counter.innerText = `${slideIndex}/${x.length}`;
+  counter.innerText = `[${slideIndex}/${x.length}]`;
 }
+
+
