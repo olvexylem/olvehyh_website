@@ -41,24 +41,13 @@ body {
         .heading{
             position: fixed;
             z-index: +1;
-            top: 1.5rem;
             text-decoration: line-through;
         }
         .heading:hover{
             opacity: 50%;
         }
     
-        .subpage{
-            font-size: 30px;
-            line-height: 120%;
-            display: block;
-        }
-        .index-count{
-            font-size: 25px;
-            letter-spacing: 1px;
-            margin-inline: 1px;
-            vertical-align:top;
-        }
+    
             .image-container{
                 margin-top: 3rem;
                 display: grid;
@@ -110,27 +99,32 @@ body {
 
                 transition: mix-blend-mode 0.5s ease, color 0.5s ease;
             }
+
             .project-title{
                 top: 0;
-                left: 0;
+                left: 2rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 83%;
             }
-                .title:hover{
-                    font-style: italic;
-                }
+            .title:hover{
+                font-style: italic;
+            }
+
             .arrow{
                 top: 0;
-                right: 0; 
+                left: 0rem;
             }
-                .caption.arrow::before {
-                    top: 0;
-                    right: 0;                    
-                    content: "◁"; /* Down arrow initially */
-                    display: inline-block;
-                    transition: transform 0.3s ease;
-                }
-                .project-cover.expanded .caption.arrow::before {
-                    content: "▽"; /* Up arrow when expanded */
-                }
+            .arrow::before {                   
+                content: "▷";
+                display: inline-block;
+                transition: transform 0.3s ease;
+            }
+            .project-cover.expanded .arrow::before {
+                content: "▽";
+            } 
+
             .preview-count{
                 bottom: 0;
                 left: 0;
@@ -139,6 +133,7 @@ body {
             .project-cover.expanded .caption.preview-count {
                 display: block; /* Show when expanded */
             }
+
             .more{
                 bottom: 0;
                 right: 0;
@@ -157,9 +152,9 @@ body {
     .clickable{
         cursor: pointer;
     }
-        .clickable:hover{
-            opacity: 50%;
-        }
+    .clickable:hover{
+        opacity: 50%;
+    }
     .button-container{
         display: flex;
         flex-direction: column;
@@ -173,6 +168,18 @@ body {
         user-select: none;
     }
 
+    .filter-menu{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .label-ellipsis{
+        max-width: 100%;           
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .filter-menu input[type="radio"] { 
         width: 0; 
         appearance: none;
@@ -184,8 +191,24 @@ body {
 
     .filter-menu label:hover,
     .filter-menu input[type="radio"]:checked + label {
-        text-decoration: underline;
+        opacity: 50%;
     }
+    .subpage{
+        font-size: 30px;
+        line-height: 120%;
+        display: block;
+    }
+    .index-count{
+        font-size: 25px;
+        letter-spacing: 1px;
+        margin-inline: 1px;
+        vertical-align:top;
+    }
+    .project-category {
+        display: flex;
+        align-items: left;
+        margin-bottom: 2px;
+      }
 
 
     .slideshow {
@@ -282,11 +305,15 @@ body {
       }
 
       @media (max-width: 1000px) {
+        .page{
+            margin-block: 1.5rem;
+            margin-inline: 2rem;
+        }
         .subpage{
-            font-size: 25px;
+            font-size: 20px;
         }
         .index-count{
-            font-size: 20px;
+            font-size: 15px;
         }
         .highlight-button{
             text-align: right;
