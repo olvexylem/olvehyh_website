@@ -1,0 +1,142 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.skeletonContainer{height: 100vh;}
+.organ{width: 50%;height: 100%;}
+
+.skull{margin-bottom: 3rem; display: flex;}
+.circulatorySystem{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    
+    display: flex; 
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.vital-organ{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-inline: 2rem;
+}
+.nervousSystem{display: flex;}
+.socials{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    width: 50%;
+}
+a{text-decoration: none; color: black;}
+.linkArrow{font-size: 12px;}
+
+.limb{
+    position: relative;
+    align-items: start;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.pageText{
+    display: flex;
+    flex-direction: column;
+}
+
+.cell{
+    margin-left: 2rem; 
+    width: 35%;
+    height: 100%;
+}
+
+.projectTitle{font-size: 20px;}
+.projectFinder{margin-bottom: 1rem;}
+.projectSynopsis{margin-bottom: 1rem;}
+
+.muscle{
+    margin: 0;
+    padding: 0;
+    height:88.5%; 
+    overflow: scroll;
+    scrollbar-width: none;   
+}
+.muscle img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.arrowToggle{margin-block: 1rem;}
+
+/* vimeo settings */
+.vimeo-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+iframe.vimeo-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+    .eighty-fifty-container{ aspect-ratio: 83 / 54; /* Set custom aspect ratio */}
+    iframe.eighty-fifty-video{ width: 153.7%; /* 100 * (83 / 54) */}
+
+    .sixteen-nine-container { aspect-ratio: 16 / 9;}
+    iframe.sixteen-nine-video { width: 177.78%; /* 100 * (16 / 9) */}
+
+    .ether-container { aspect-ratio: 25 / 18; }
+    iframe.ether-video { width: 138.89%; }
+
+    .human-container { aspect-ratio: 4 / 3; }
+    iframe.human-video { width: 133.33%; }
+
+
+
+/* iphone display */
+@media (min-width: 1000px) {
+    .limb {
+        flex-direction: row;
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+    .limb {
+        flex-direction: column;
+    }
+    .cell{
+        width: 85%;
+        height: fit-content;
+    }
+    .muscle{
+        height:50%; 
+    }
+
+
+    .nervousSystem{
+        flex-direction: column;
+    }
+    .socials {
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        gap: 0;
+    }
+    .organ{
+        width: 100%;
+    }
+    .colophon{
+        margin-top: 2rem;
+    }
+}

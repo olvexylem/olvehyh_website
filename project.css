@@ -82,7 +82,6 @@ a:hover{
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-bottom: 5px;
 }
 iframe.vimeo-video{
     position: absolute;
@@ -155,6 +154,11 @@ iframe.vimeo-video{
     margin-top: 1.5rem;
     margin-right: 2rem;
     }
+
+.colophon{
+    margin-bottom: 1rem;
+}
+
 
  /* iphone display */
  @media (min-width: 1000px) {
