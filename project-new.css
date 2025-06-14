@@ -7,6 +7,7 @@ body{
 .skeletonContainer{height: 100vh;}
 .organ{width: 50%;height: 100%;}
 
+
 .skull{margin-bottom: 3rem; display: flex;}
 .circulatorySystem{
     margin-top: 2rem;
@@ -105,38 +106,30 @@ iframe.vimeo-video{
 
 /* iphone display */
 @media (min-width: 1000px) {
-    .limb {
-        flex-direction: row;
-    }
+    .limb {flex-direction: row;}
 }
-
-
 
 @media (max-width: 1000px) {
     .limb {
         flex-direction: column;
+        justify-content: start;
+        height: 89vh;
     }
     .cell{
-        width: 85%;
+        margin: 0;
+        width: 100%;
         height: fit-content;
     }
-    .muscle{
-        height:50%; 
-    }
+    .pageText{padding-inline: 2rem;}
+    .muscle{height:100vw;}
+    .arrowToggle{margin-left: 1rem;}
 
-
-    .nervousSystem{
-        flex-direction: column;
-    }
+    .nervousSystem{flex-direction: column;}
     .socials {
         /* flex-wrap: wrap; */
         flex-direction: column;
         gap: 0;
     }
-    .organ{
-        width: 100%;
-    }
-    .colophon{
-        margin-top: 2rem;
-    }
+    .organ{width: 100%;}
+    .colophon{margin-top: 2rem;}
 }
