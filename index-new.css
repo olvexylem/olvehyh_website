@@ -19,6 +19,11 @@ body.dark-mode {
     margin-bottom: 3rem; 
     display: flex;
 }
+/* .homeName:hover{
+    margin-inline: 10px;
+    transition: 0.3s ease;
+} */
+
 .skeletonContainer{
     height: 100vh;
     overflow-y: scroll;
