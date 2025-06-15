@@ -9,6 +9,7 @@ body{
 
 
 .skull{margin-bottom: 3rem; display: flex;}
+
 .circulatorySystem{
     margin-top: 1rem;
     margin-left: 1rem;
@@ -23,7 +24,7 @@ body{
     margin-bottom: 1rem;
     margin-inline: 1rem;
 }
-.nervousSystem{display: flex;}
+.nervousSystem{display: flex; margin-bottom: 1rem;}
 .socials{
     position: relative;
     display: flex;

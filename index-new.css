@@ -16,13 +16,48 @@ body.dark-mode {
 }
 
 .skull{
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1rem; 
     display: flex;
 }
-/* .homeName:hover{
-    margin-inline: 10px;
-    transition: 0.3s ease;
-} */
+/* homeButton logistics */
+.homeButton {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: baseline;
+}
+.homeName {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  transition: width 0.5s ease, opacity 0.3s ease;
+  vertical-align: baseline;
+}
+.homeName.expanded {
+  width: 6.5ch; /* width for 'olvehyh' */
+  opacity: 1;
+}
+/* Shared animation style */
+.archiveButton, .aboutButton {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  transition: width 0.4s ease, opacity 0.3s ease;
+}
+.archiveButton.expanded {
+  width: 7ch; /* width for "Archive" */
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+.aboutButton.expanded {
+  width: 5ch; /* width for "About" */
+  opacity: 1;
+  transition-delay: 0.9s;
+}
+/* end of homeButton logistics */
 
 .skeletonContainer{
     height: 100vh;
@@ -39,7 +74,7 @@ body.dark-mode {
     display: flex;
     align-items: start;
     justify-content: center;
-    height: 85%;
+    height: 92%;
 
     flex-direction: row;
     gap: 1rem;
@@ -78,6 +113,8 @@ body.dark-mode {
 .imageContainer:hover img {opacity: 40%;}
 
 .skin{
+    margin-top: 3rem;
+
     position: relative;
     display: none;
     align-items: start;
@@ -93,6 +130,8 @@ body.dark-mode {
 .contactTitle{margin-right: 2rem;}
 
 .skeleton{
+    margin-top: 3rem;
+
     position: relative;
     display: none;
     align-items: start;
@@ -105,7 +144,7 @@ body.dark-mode {
 
 .organ{width: 50%;height: 100%;}
 
-.nervousSystem{display: flex;}
+.nervousSystem{display: flex; margin-bottom: 1rem;}
 .circulatorySystem{
     display: flex; 
     flex-direction: row;

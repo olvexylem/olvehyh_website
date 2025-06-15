@@ -68,10 +68,27 @@ projectFilters.forEach(projectFilter => {
 // colorToggle
 const toggle = document.getElementById('colorToggle');
 
-toggle.addEventListener('change', () => {
-  if (toggle.checked) {
-    document.body.classList.add('dark-mode');
-  } else {
-    document.body.classList.remove('dark-mode');
-  }
-});
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  });
+  
+
+// homeButton logistics
+const homeButton = document.querySelector('.homeButton');
+  const homeName = document.querySelector('.homeName');
+  const archiveButton = document.querySelector('.archiveButton');
+  const aboutButton = document.querySelector('.aboutButton');
+
+  let expanded = false;
+
+  homeButton.addEventListener('click', () => {
+    expanded = !expanded;
+
+    homeName.classList.toggle('expanded', expanded);
+    archiveButton.classList.toggle('expanded', expanded);
+    aboutButton.classList.toggle('expanded', expanded);
+  });
