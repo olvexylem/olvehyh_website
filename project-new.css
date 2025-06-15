@@ -10,8 +10,8 @@ body{
 
 .skull{margin-bottom: 3rem; display: flex;}
 .circulatorySystem{
-    margin-top: 2rem;
-    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
     
     display: flex; 
     flex-direction: row;
@@ -20,8 +20,8 @@ body{
 
 .vital-organ{
     margin-top: 3rem;
-    margin-bottom: 2rem;
-    margin-inline: 2rem;
+    margin-bottom: 1rem;
+    margin-inline: 1rem;
 }
 .nervousSystem{display: flex;}
 .socials{
@@ -34,48 +34,53 @@ body{
 a{text-decoration: none; color: black;}
 .linkArrow{font-size: 12px;}
 
-.limb{
-    position: relative;
+.limb{ 
     align-items: start;
     display: flex;
     justify-content: center;
-    height: 100vh;
-    flex-direction: row;
+    height: 91vh;
+    flex-direction: row; 
     gap: 2rem;
+    overflow: scroll;
+    scrollbar-width: none; 
 }
 
-.pageText{
-    display: flex;
-    flex-direction: column;
-}
-
-.cell{
-    margin-left: 2rem; 
+.cell {
+    top: 0;
+    position: sticky;
     width: 35%;
-    height: 100%;
+    padding-inline-start: 1rem;
+    height: fit-content;
+    align-self: flex-start;
 }
 
 .projectTitle{font-size: 20px;}
 .projectFinder{margin-bottom: 1rem;}
 .projectSynopsis{margin-bottom: 1rem;}
 
+.fixedContainer {
+    flex-wrap: wrap;
+    display: flex;
+}
+
 .muscle{
     margin: 0;
     padding: 0;
-    height:88.5%; 
-    overflow: scroll;
-    scrollbar-width: none;   
+    height:88.5%;
+    display: flex;
+    flex-direction: column;   
 }
 .muscle img{
-    display: block;
-    width: 100%;
-    height: auto;
     margin: 0;
     padding: 0;
     border: 0;
+
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.arrowToggle{margin-block: 1rem;}
+.arrowToggle{margin-block: 1rem; padding-bottom: 1rem;}
 
 /* vimeo settings */
 .vimeo-container{
@@ -113,12 +118,18 @@ iframe.vimeo-video{
     .limb {
         flex-direction: column;
         justify-content: start;
-        height: 89vh;
+        height: 91vh;
     }
-    .cell{
-        margin: 0;
-        width: 100%;
+    .cell {
+        position: relative;
+        width: 95%;
+        padding-inline-start: 1rem;
         height: fit-content;
+        align-self: flex-start;
+    }
+    .fixedContainer {
+        flex-wrap: wrap;
+        display: flex;
     }
     .pageText{padding-inline: 2rem;}
     .muscle{height:100vw;}
