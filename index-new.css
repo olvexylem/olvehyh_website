@@ -108,6 +108,8 @@ body.dark-mode {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+
+    text-align: center;
 }
 .imageContainer:hover .imageDescription {display: block;}
 .imageContainer:hover img {opacity: 40%;}
