@@ -1,5 +1,13 @@
 *{margin: 0; padding: 0;}
+
+@keyframes fadeInPage {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 body{
+    animation: fadeInPage 1s ease-in forwards;
+    opacity: 0; /* Start invisible */
+
     margin: 1rem;
     background-color: white;
     transition: background-color 0.3s ease;
@@ -13,6 +21,83 @@ body.dark-mode {
 
     mix-blend-mode: difference;
     color: white;
+}
+
+.veil{
+    position: absolute;
+    z-index: +2;
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    background-color: white;
+}
+#professionalName {
+    position: absolute;
+    text-align: left;
+    transform:translate(0,-50%);
+    top: 50%;
+    left: 0;
+    transition: none;
+    opacity: 0;
+
+    display: inline-flex;
+    align-items: baseline;
+}
+.bracket{
+
+}
+#professionalName.visible {
+    opacity: 1;
+    /* Only fade in, no move yet */
+}
+#professionalName.animate-out {
+    animation: nameMoveUp 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+@keyframes nameMoveUp {
+    0% {
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+    100% {
+        top: 0;
+        transform: translate(0,0);
+    }
+}
+#professionalName .Name {
+  display: inline-block;
+  overflow: hidden;
+  width: 6.5ch;
+  opacity: 1;
+  white-space: nowrap;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1);
+  vertical-align: baseline;
+}
+#professionalName.collapsed .Name {
+  width: 0;
+  opacity: 0;
+}
+#professionalTitle {
+    position: absolute;
+    text-align: left;
+    transform:translate(-50%,-50%);
+    margin-left: 50vw;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+#professionalTitle.visible {
+    opacity: 1;
+    /* Only fade in, no fade out yet */
+}
+#professionalTitle.animate-out {
+    animation: titleFadeOut 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+@keyframes titleFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .skull{
@@ -261,7 +346,7 @@ input:checked + .slider:before {
     
     .galleryContainer{
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
     }
    .nervousSystem{
         flex-direction: column;
@@ -292,4 +377,29 @@ input:checked + .slider:before {
     }
     
 }
-    
+
+/* Intro screen overlay for first visit */
+.veil-intro {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 2.5s cubic-bezier(0.4,0,0.2,1);
+    z-index: 1000;
+    background: white;
+}
+.veil-fadeout {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Animate child elements inside veil-identity */
+#veil-identity .veil-anim {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+#veil-identity .veil-anim.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
