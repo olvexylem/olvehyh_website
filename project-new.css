@@ -1,80 +1,120 @@
-body{
+* {
     margin: 0;
     padding: 0;
-    background-color: white;
 }
 
-.skeletonContainer{height: 100vh;}
-.organ{width: 50%;height: 100%;}
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: 'ABCDiatypeVariable';
+    src: url('ABCDiatypeVariable.ttf') format('woff');
+}
+
+body {
+    animation: fadeInPage 1s ease-in forwards;
+    opacity: 0;
+    /* Start invisible */
+
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    margin-inline: 0.1rem;
+    background-color: white;
+    transition: background-color 0.3s ease;
+
+    font-family: 'ABCDiatypeVariable';
+    font-weight: 400;
+
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
 
 
-.skull{margin-bottom: 3rem; display: flex;}
+.skull {
+    position: fixed;
+    top: 0.1rem;
+    z-index: 2;
+    display: flex;
+    width: 99.8%;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-sizing: border-box;
+}
 
-.circulatorySystem{
-    margin-top: 1rem;
-    margin-left: 1rem;
-    
-    display: flex; 
+.skullSection {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menuButton {justify-content: flex-start;}
+.homeButton {justify-content: center;}
+.aboutButton {justify-content: flex-end;}
+
+a.skullSection {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.limb {
+    display: flex;
+    align-items: start;
     flex-direction: row;
     gap: 1rem;
+
+    scrollbar-width: none;
+    font-size: 10pt;
+    text-align: left;
+    margin-bottom: 5rem;
+    padding-top: 1rem;
+    padding-inline: 1rem;
+
+    border-top: 1px black solid;
 }
 
-.vital-organ{
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    margin-inline: 1rem;
-}
-.nervousSystem{display: flex; margin-bottom: 1rem;}
-.socials{
-    position: relative;
+.projectTitle {
     display: flex;
-    flex-direction: row;
-    gap:1rem;
-    width: 50%;
-}
-a{text-decoration: none; color: black;}
-.linkArrow{font-size: 12px;}
+    align-items: center;
+    justify-content: left;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 
-.limb{ 
-    align-items: start;
-    display: flex;
-    justify-content: center;
-    height: 91vh;
-    flex-direction: row; 
-    gap: 2rem;
-    overflow: scroll;
-    scrollbar-width: none; 
+    width: 50vw;
+}
+.projectText {
+    width: 50vw;
+}
+#projectDetails{
+    font-size: 9pt;
 }
 
-.cell {
-    top: 0;
-    position: sticky;
-    /* width: 35%; */
-    min-width: 30%; /* optional */
-    max-width: 30%;
-
-    padding-inline-start: 1rem;
-    height: fit-content;
-    align-self: flex-start;
-}
-
-.projectTitle{font-size: 20px;}
-.projectFinder{margin-bottom: 1rem;}
-.projectSynopsis{margin-bottom: 1rem;}
-
-.fixedContainer {
-    flex-wrap: wrap;
-    display: flex;
-}
-
-.muscle{
+.muscle {
     margin: 0;
     padding: 0;
-    height:88.5%;
+    height: 100%;
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
 }
-.muscle img{
+
+.muscle img {
     margin: 0;
     padding: 0;
     border: 0;
@@ -84,68 +124,127 @@ a{text-decoration: none; color: black;}
     display: block;
 }
 
-.arrowToggle{margin-block: 1rem; padding-bottom: 1rem;}
+.arrowToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.arrowToggle a {
+    text-decoration: none;
+}
+
+#moreText {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+
+    padding-block: 5rem;
+    padding-inline: 1rem;
+    font-size: 10pt;
+
+    border-bottom: 1px black solid;
+}
+
+.line{
+    height: 1px;
+    background-color: black;
+}
+
+.extraText {
+    width: 50vw;
+}
+
+.footer {
+    display: flex;
+    align-items: start;
+    padding-inline: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+
+    flex-direction: column;
+
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+.copyright {
+    padding-top: 2rem;
+}
+
 
 /* vimeo settings */
-.vimeo-container{
+.vimeo-container {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
-iframe.vimeo-video{
+
+iframe.vimeo-video {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 100%;
 }
-    .eighty-fifty-container{ aspect-ratio: 83 / 54; padding-top: calc(100% * (54 / 83));/* Set custom aspect ratio */}
-    iframe.eighty-fifty-video{ width: 153.7%; /* 100 * (83 / 54) */}
 
-    .sixteen-nine-container { aspect-ratio: 16 / 9; padding-top: calc(100% * (9 / 16));}
-    iframe.sixteen-nine-video { width: 177.78%; /* 100 * (16 / 9) */}
+.eighty-fifty-container {
+    aspect-ratio: 83 / 54;
+    padding-top: calc(100% * (54 / 83));
+    /* Set custom aspect ratio */
+}
 
-    .ether-container { aspect-ratio: 25 / 18; padding-top: calc(100% * (18 / 25));}
-    iframe.ether-video { width: 138.89%; }
+iframe.eighty-fifty-video {
+    width: 153.7%;
+    /* 100 * (83 / 54) */
+}
 
-    .human-container { aspect-ratio: 4 / 3; padding-top: calc(100% * (3 / 4));}
-    iframe.human-video { width: 133.33%; }
+.sixteen-nine-container {
+    aspect-ratio: 16 / 9;
+    padding-top: calc(100% * (9 / 16));
+}
+
+iframe.sixteen-nine-video {
+    width: 177.78%;
+    /* 100 * (16 / 9) */
+}
+
+.ether-container {
+    aspect-ratio: 25 / 18;
+    padding-top: calc(100% * (18 / 25));
+}
+
+iframe.ether-video {
+    width: 138.89%;
+}
+
+.human-container {
+    aspect-ratio: 4 / 3;
+    padding-top: calc(100% * (3 / 4));
+}
+
+iframe.human-video {
+    width: 133.33%;
+}
 
 
 
 /* iphone display */
-@media (min-width: 1000px) {
-    .limb {flex-direction: row;}
-}
-
 @media (max-width: 1000px) {
-    .limb {
-        flex-direction: column;
-        justify-content: start;
-        height: 91vh;
-    }
-    .cell {
-        position: relative;
-        min-width: 95%; /* optional */
-        max-width: 95%;
-        padding-inline-start: 1rem;
-        height: fit-content;
-        align-self: flex-start;
-    }
-    .fixedContainer {
-        flex-wrap: wrap;
-        display: flex;
-    }
-    .pageText{padding-inline: 2rem;}
-    .muscle{height:100vw;}
-    .arrowToggle{margin-left: 1rem;}
 
-    .nervousSystem{flex-direction: column;}
-    .socials {
-        /* flex-wrap: wrap; */
+    .limb,
+    #moreText {
         flex-direction: column;
-        gap: 0;
     }
-    .organ{width: 100%;}
-    .colophon{margin-top: 2rem;}
+
+    .cell {
+        width: 100%;
+    }
 }
