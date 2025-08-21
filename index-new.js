@@ -39,14 +39,13 @@ projectFilters.forEach(projectFilter => {
 });
 
 // colorToggle
-const toggle = document.getElementById('colorToggle');
-
-if (toggle) {
-  toggle.addEventListener('change', function () {
-    document.body.classList.toggle('dark-mode', this.checked);
-  });
-}
-  
-
+const switchInput = document.getElementById('switch');
+switchInput.addEventListener('change', () => {
+  if (switchInput.checked) {
+    document.body.classList.add('bg-active');
+  } else {
+    document.body.classList.remove('bg-active');
+  }
+});
 
 

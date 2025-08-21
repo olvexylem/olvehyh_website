@@ -28,13 +28,12 @@ html {
 body {
   animation: fadeInPage 1s ease-in forwards;
   opacity: 0;
-  /* Start invisible */
 
   margin-top: 10rem;
   margin-bottom: 1rem;
   margin-inline: 0.1rem;
   background-color: white;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 
   font-family: 'ABCDiatypeVariable';
   font-weight: 400;
@@ -44,17 +43,12 @@ body {
   scrollbar-width: none;
 }
 
-body.dark-mode {
+.bg-active {
   background-image: url('IMG_5928.jpeg');
   background-repeat: no-repeat;
-  /* Prevent image from repeating */
   background-size: cover;
-  /* Make image cover the whole area */
   background-position: center;
-  /* Center the image */
   background-attachment: fixed;
-  /* Optional: makes background fixed on scroll */
-
   mix-blend-mode: difference;
   color: white;
 }
@@ -78,6 +72,7 @@ body.dark-mode {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: rgb(27, 26, 26);
 }
 
 .menuButton {
@@ -183,8 +178,6 @@ body.dark-mode {
 
 .aboutText {
   font-weight: 400;
-  text-align: justify;
-  hyphens: auto;
   width: 50vw;
 }
 
@@ -247,7 +240,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 50%;
+  width: 100%;
 }
 
 .filterSelection {
@@ -299,66 +292,44 @@ a {
 
 /* switch settings */
 
-.switch {
-  position: fixed;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  z-index: 1;
+  .love {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 1;
+  }
 
-  display: inline-block;
-  width: 40px;
-  height: 24px;
-}
+  #switch {
+    display: none;
+  }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+  .love-heart {
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+  }
 
-/* The slider (background track) */
-.slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  .love-heart .round {
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 0, 153);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: transform 0.3s ease;
+  }
 
-  background-color: black;
-  border-radius: 999px;
-  cursor: pointer;
-
-  transition: background-color 0.4s;
-}
-
-/* The circle (toggle knob) */
-.slider::before {
-  content: "";
-  position: absolute;
-
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
-
-  background-color: white;
-  border-radius: 50%;
-
-  transition: transform 0.4s;
-}
-
-/* Toggle on (background color) */
-input:checked+.slider {
-  background-color: rgb(216, 216, 216);
-}
-
-/* Toggle on (move knob to the right) */
-input:checked+.slider::before {
-  transform: translateX(26px);
-  /* 50px - knob width (20px) - left padding (2px) = ~28px */
-}
+  #switch:checked + .love-heart .round {
+    transform: scale(1.5);
+  }
 
 /* end of switch settings */
+
 
 
 .footer {
@@ -403,10 +374,11 @@ input:checked+.slider::before {
   .skin {
     height: fit-content;
     flex-direction: column;
+    gap: 5rem;
   }
 
-  .aboutText {
-    width: 90%;
+  .aboutInfo, .aboutText{
+    width: 100%;
   }
 
   .project-title {
@@ -416,10 +388,8 @@ input:checked+.slider::before {
     max-width: 200px;
   }
 
-  .aboutInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
+  .imageContainer {
+  height: 300px;
+}
 
 }
