@@ -1,127 +1,337 @@
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0; 
+  padding: 0; */
+  box-sizing: border-box;
 }
 
 @keyframes fadeInPage {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @font-face {
-  font-family: 'ABCDiatypeVariable';
-  src: url('ABCDiatypeVariable.ttf') format('woff');
+    font-family: "Inter";
+    src: url("Fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 1 999;
+    /* variable weight range */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("Fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 1 999;
+    font-style: italic;
 }
 
 body,
 html {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  scroll-behavior: auto;
 }
 
 body {
   animation: fadeInPage 1s ease-in forwards;
   opacity: 0;
 
-  margin-top: 10rem;
-  margin-bottom: 1rem;
-  margin-inline: 0.1rem;
-  background-color: white;
-  transition: background-color 0.2s ease;
-
-  font-family: 'ABCDiatypeVariable';
-  font-weight: 400;
+  margin: 0;
 
   height: fit-content;
   overflow-y: scroll;
   scrollbar-width: none;
-}
 
-.bg-active {
-  background-image: url('IMG_5928.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  mix-blend-mode: difference;
-  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 
 .skull {
   position: fixed;
-  top: 0.1rem;
+  margin: 1rem;
   z-index: 2;
-  display: flex;
-  width: 99.8%;
-  font-size: 10pt;
+
+  font-size: 9pt;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-sizing: border-box;
-}
-
-.skullSection {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: rgb(27, 26, 26);
-}
-
-.menuButton {
-  justify-content: flex-start;
-}
-
-.homeButton {
-  justify-content: center;
-}
-
-.aboutButton {
-  justify-content: flex-end;
-}
-
-
-.organ .listOfProject-container {
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-
-.galleryContainer {
-  position: relative;
+  letter-spacing: 0.03em;
+  text-align: left;
+  
+  width: calc(100vw - 2rem);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 0.1rem;
-  row-gap: 0.1rem;
-
-  width: 100%;
-  /* or 100% if needed */
-
-  scrollbar-width: none;
-
-  border-bottom: 1px solid black;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
 }
 
-.galleryContainer img {
+/* Assign each item to the column you want */
+.copyright {
+    grid-column: 1 / span 2;
+    overflow: visible;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.navLinks {
+  grid-row: 1 / span 1;  
+  grid-column: 3 / span 2;
+  
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+}
+.ankh_symbol{
+  grid-column: 1 / span 1;
+  font-size: 12pt;
+}
+.ankh_symbol input[type="checkbox"] {
+  display: none;
+}
+.navText{
+  grid-column: 2 / span 1;
+}
+
+body:has(#navAnkh:checked) .navText {display: block;}
+body:has(#navAnkh:not(:checked)) .navText {display: none;}
+
+.ankh_symbol label {
+  display: inline-block;
+  transition: transform 0.3s ease; /* smooth rotation */
+}
+body:has(#navAnkh:checked) .ankh_symbol label {
+  transform: rotate(45deg); /* optional: slightly bigger */
+}
+
+.name {
+    grid-row: 1 / span 1;
+    grid-column: 6 / span 1;
+    text-align: right;
+}
+
+
+/* Container for all highlights */
+.highlightsContainer {
+  height: 100vh; /* full viewport height */
+  overflow-y: hidden;
+  scrollbar-width: none;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+
+  letter-spacing: 0.03em;
+  font-size: 9pt;
+}
+.highlightsProject {
+  width: 100vw;
+  height: 100vh;
+
+  grid-row: 1 / span 4;
+  grid-column: 1 / span 6;
+
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.highlightsProject::-webkit-scrollbar {
+  display: none;
+}
+/* Each individual slide */
+.highlights {
+  flex: 0 0 100vw; /* each image full screen width */
+  height: 100%;
+  scroll-snap-align: start;
+}
+/* Slide images */
+.highlights img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* fill and crop image */
   display: block;
 }
+
+
+
+
+/* project_part is always minimum 100vh */
+#project_part {
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/* When checkbox is checked → hide */
+body:has(#filter-plus:checked) .filterToggle_container {display: flex;}
+/* When checkbox is NOT checked → show (flex) */
+body:has(#filter-plus:not(:checked)) .filterToggle_container {display: none;}
+#filter-plus {
+  display: none; /* or visibility: hidden; */
+}
+
+.filter_status label {
+  display: inline-block;
+  transition: transform 0.3s ease; /* smooth rotation */
+}
+body:has(#filter-plus:checked) .filter_status label {
+  transform: rotate(45deg); /* optional: slightly bigger */
+}
+
+
+.filtertwo{
+  height: 25vh;
+  margin-inline: 1rem;
+  margin-bottom: 1rem;
+
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: end;
+
+  position: relative;
+}
+.filtertwo .filter_title{
+  grid-row: 1;
+  grid-column: 1 / span 1;
+}
+.filtertwo .filter_toggle{
+  grid-row: 1;
+  grid-column: 1 / span 1;
+  text-align: right;
+}
+.filtertwo .filter_indexView{
+  grid-column: 6 / span 1;
+  text-align: right;
+}
+.filter_status{
+  grid-row: 1;
+  grid-column: 1 / span 1;
+  text-align: right;
+}
+
+.filterToggle_container{
+  position: absolute;
+  z-index: 2;
+  width: calc((100vw - 2rem) / 6);
+  justify-content: end;
+  
+  display: none;
+}
+.filterToggle_options{
+  grid-column: 1 / span 1;
+  background-color: white;
+  width: fit-content;
+  padding: 1rem;
+
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.filterOption{
+  margin-bottom: 0.2rem;
+}
+.filterOption:hover{
+  opacity: 50%;
+}
+
+.filterToggle_options input[type="radio"] {
+  width: 0;
+  appearance: none;
+  visibility: hidden;
+}
+.filterToggle_options label {
+  cursor: pointer;
+}
+.filterOption:has(input[type="radio"]:checked) label {
+  opacity: 50%;
+}
+
+.categoryCount{
+  font-size: 0.9em;
+  vertical-align: 0.05em;
+}
+
+body:has(#display-image:checked) .text-container { display: none }
+body:has(#display-image:checked) .imageContainer { display: block }
+body:has(#display-image:checked) .projectGallery {
+  width: 100%;
+  margin: 0;
+}
+body:has(#display-image:checked) .projectContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1 / span 6;
+}
+body:has(#display-image:checked) .projectBox {
+  width: 100%; /* fill the grid column */
+  box-sizing: border-box;
+  grid-column: auto; /* reset any previous column positioning */
+  grid-row: auto;    /* reset row positioning */
+}
+
+body:has(#display-text:checked) .text-container { display: flex }
+body:has(#display-text:checked) .imageContainer { display: none }
+
+#display-image:checked + label,
+#display-text:checked + label {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.projectIndex{height: fit-content;}
+
+
+.projectGallery{
+  display: grid; /*!!!*/
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+
+  font-size: 9pt;
+  text-align: left;
+
+  margin-inline: 1rem;
+  width: calc(100% - 2rem);
+  height: fit-content;
+  margin-bottom: 2rem;
+}
+.projectGallery .projectContainer{
+  grid-row: 1;
+  grid-column: 3 / span 3;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.projectBox{
+  display: flex;
+  flex-direction: column;
+}
+.text-container{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+  transition: margin-top 0.3s ease, margin-bottom 0.3s ease;
+}
+.text-container:hover {
+  margin-block: 1rem;
+}
+.projectTitle{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 500px;
-  /* or any fixed height */
+  height: 600px;/* or any fixed height */
   overflow: hidden;
+  /* margin-bottom: 0.5rem; */
 }
 
 .imageContainer img {
@@ -139,12 +349,18 @@ body {
   z-index: 1;
 
   display: none;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0rem;
-  font-size: 10pt;
+  /* justify-content: space-between; */
+
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  font-size: 9pt;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  
+  justify-content: center;
+  top: 50%;
+  transform: translate(0,-50%);
+  text-align: center;
 }
 
 .imageContainer:hover .imageDescription {
@@ -155,241 +371,311 @@ body {
   opacity: 0%;
 }
 
-
-
-.skin {
-  position: relative;
-  display: flex;
-  align-items: start;
-  justify-content: left;
-
-  flex-direction: row;
-  gap: 1rem;
-  font-size: 11pt;
-
-  padding-inline: 1rem;
-  padding-block: 1rem;
-  border-block: 1px solid black;
-}
-
-.aboutInfo {
-  width: 50vw;
-}
-
-.aboutText {
-  font-weight: 400;
-  width: 50vw;
-}
-
-
-
-.skeleton {
-  position: relative;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-
-  flex-direction: row;
-  gap: 1rem;
-
-  font-size: 10pt;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-
-  border-block: 1px black solid;
-  padding-bottom: 1rem;
-}
-
 .organ {
   width: 50%;
   height: 100%;
 }
+
+.aboutPage{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+
+  font-size: 9pt;
+  text-align: left;
+
+  margin-inline: 1rem;
+  width: calc(100% - 2rem);
+  height: 100vh;
+}
+.aboutPage .aboutOlivia{
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 3;
+
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: -0.05em;
+  overflow-wrap: break-word;
+  /* font-size: 12pt;
+  font-weight: 500; */
+}
+.aboutPage .selectedClients_title{
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 1;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.aboutPage .selectedClients_text{
+  grid-row: 3 / span 1;
+  grid-column: 4 / span 2;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.aboutPage .contact_title{
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 1;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: baseline;
+  align-self: end;
+}
+.aboutPage .contact_text{
+  grid-row: 3 / span 1;
+  grid-column: 4 / span 2;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  align-self: end;
+}
+
+.experience_text{
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+
+  font-size: 9pt;
+  text-align: left;
+
+  margin-inline: 1rem;
+  width: calc(100% - 2rem);
+  height: 200vh;
+}
+.experience_text .experienceTitle{
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.experience_text .experienceOlivia{
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 3;
+  text-align: right;
+}
+
+
+.expRow{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.expRow .date {
+  grid-column: 1 / span 1;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.expRow .desc {
+  grid-column: 2 / span 2;
+  text-align: left;
+  padding-left: 25px;
+}
+
+ul{
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.education_text{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+
+  font-size: 9pt;
+  text-align: left;
+
+  margin-inline: 1rem;
+  width: calc(100% - 2rem);
+  height: 100vh;
+}
+.educationTitle{
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.educationOlivia{
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 3;
+  text-align: right;
+}
+
 
 a {
   text-decoration: none;
   color: black;
 }
 
-.listOfProject-container {
-  margin-top: 1.5rem;
-}
-
-.listOfProjects {
-  width: 100%;
-  height: 1.5rem;
-  flex-direction: row;
-  gap: 1rem;
-  transition: margin-block-start 0.3s ease, margin-block-end 0.3s ease;
-}
-
-.listOfProjects:hover {
-  margin-block: 1rem;
-}
-
-.listOfProjects.highlighted {
-  opacity: 0.4;
-}
-
-.project-date {
-  text-align: right;
-}
-
-/*  */
-.filter {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-}
-
-.filterSelection {
-  display: none;
-  transition: max-height 0.3s ease;
-}
-
-.filterSelection.active {
-  display: block;
-}
-
-.toggleIcon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.categoryButton.active .toggleIcon {
-  transform: rotate(45deg);
-  /* Turns + into × */
-}
-
-.categoryButton {
-  cursor: pointer;
-}
-
-/*  */
-.filterSelection input[type="radio"] {
-  width: 0;
-  appearance: none;
-  visibility: hidden;
-}
-
-.filterSelection label {
-  cursor: pointer;
-}
-
-.projectCategory:has(input[type="radio"]:checked) label {
-  opacity: 50%;
-}
-
-.projectCategory {
-  margin-block: 4px;
-}
-
-.linkArrow {
-  font-size: 12px;
-}
-
-
-/* switch settings */
-
-  .love {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    z-index: 1;
-  }
-
-  #switch {
-    display: none;
-  }
-
-  .love-heart {
-    cursor: pointer;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #ccc;
-    border-radius: 20px;
-    position: relative;
-  }
-
-  .love-heart .round {
-    width: 20px;
-    height: 20px;
-    background: rgb(255, 0, 153);
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    transition: transform 0.3s ease;
-  }
-
-  #switch:checked + .love-heart .round {
-    transform: scale(1.5);
-  }
-
-/* end of switch settings */
 
 
 
-.footer {
-  display: flex;
-  align-items: start;
-  padding-inline: 1rem;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
 
-  flex-direction: column;
 
-  font-size: 10pt;
-  text-transform: uppercase;
-}
 
-.copyright {
-  padding-top: 2rem;
-}
+
+
+
+
+
 
 
 
 
 /* iphone display */
-@media (min-width: 1000px) {
-  .galleryContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 @media (max-width: 1000px) {
-
-  .galleryContainer {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-  }
-
-  .organ {
-    width: 100%;
-  }
-
-  .skeleton,
-  .skin {
-    height: fit-content;
-    flex-direction: column;
-    gap: 5rem;
-  }
-
-  .aboutInfo, .aboutText{
-    width: 100%;
-  }
-
-  .project-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
-  }
-
-  .imageContainer {
-  height: 300px;
+body:has(#display-image:checked) .projectContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column: 1 / span 6;
+}
+body:has(#display-image:checked) .projectBox {
+  width: 100%; /* fill the grid column */
+  box-sizing: border-box;
+  grid-column: auto; /* reset any previous column positioning */
+  grid-row: auto;    /* reset row positioning */
 }
 
+.filtertwo .filter_indexView{
+  grid-column: 5 / span 2;
+  text-align: right;
+}
+
+
+
+/*  */
+.filterToggle_container{
+  position: absolute;
+  z-index: 2;
+  width: calc(((100vw - 2rem) / 6) * 3);
+  justify-content: start;
+
+  display: none;
+}
+.filterToggle_options{
+  grid-column: 1 / span 1;
+  background-color: white;
+  width: fit-content;
+  padding: 1rem;
+
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+/*  */
+
+
+
+.projectGallery .projectContainer{
+  grid-row: 1;
+  grid-column: 1 / span 6;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.aboutPage .aboutOlivia{
+  grid-column: 1 / span 6;
+}
+.aboutPage .selectedClients_title{
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 6;
+  align-self: start;
+}
+.aboutPage .selectedClients_text{
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 6;
+  margin-top: 2rem;
+}
+.aboutPage .contact_title{
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 6;
+  align-self: start;
+}
+.aboutPage .contact_text{
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 6;
+  align-self: start;
+  margin-top: 2rem;
+}
+
+.experience_text{
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+
+  font-size: 9pt;
+  text-align: left;
+
+  margin-inline: 1rem;
+  width: calc(100% - 2rem);
+  height: 250vh;
+}
+.experience_text .experienceTitle{
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  margin: 1rem;
+  padding-left: 25px;
+  align-self: end;
+}
+.experience_text .experienceOlivia{
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 6;
+}
+.expRow{
+  grid-template-columns: repeat(6, 1fr);
+}
+.expRow .date {
+  grid-column: 1 / span 1;
+}
+.expRow .desc {
+  grid-column: 2 / span 5;
+}
+
+.education_text{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+
+  font-size: 9pt;
+  text-align: left;
+
+  margin-inline: 1rem;
+  width: calc(100% - 2rem);
+  height: 100vh;
+}
+.educationTitle{
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  margin: 1rem;
+  padding-left: 25px;
+  align-self: end;
+}
+.educationOlivia{
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 6;
+}
+
+.copyright {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+.navLinks {
+  grid-row: 1 / span 1;  
+  grid-column: 1 / span 2;
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.name {
+    grid-row: 1 / span 1;
+    grid-column: 5 / span 2;
+    text-align: right;
+}
 }

@@ -12,15 +12,30 @@
 <body>
 
     <div class="skull">
-        <a href="../archive.html" class="skullSection menuButton">Archive</a>
-        <a href="../index.html" class="skullSection homeButton">Olivia Huynh</a>
-        <a href="../about.html" class="skullSection aboutButton">About</a>
+        <div class="copyright">
+            <span class="copyright_symbol">©</span>
+            <span class="copyright_text" style="display:none;">
+                Self-Developed Website<br>© 2026 Olivia Huynh. All Rights Reserved.
+            </span>
+        </div>
+        <div class="navLinks">
+            <div class="ankh_symbol">
+                <input type="checkbox" id="navAnkh">
+                <label for="navAnkh">☥</label>
+            </div>
+            <span class="navText">
+                <a href="../index.html#filterIndex">Projects</a><br>
+                <a href="../index.html#about_part">About</a>
+            </span>
+        </div>
+        <div class="name"><a href="../index.html">Olivia Huynh</a></div>
     </div>
 
-    <div class="limb">
-        <div class="projectTitle cell">Utopia</div>
 
-        <div class="projectText cell">
+    <div class="page" id="page-id">
+
+        <div class="project-desc">
+            <p class="project-title">Utopian Documentation</p>
             <p>A typography project featuring a publication and textile installation.<br>
                 <br>
                 Inspired by FBI documents, <i>Utopian Files</i> is a re-design of Bernadette Mayer's novel Utopia.
@@ -28,22 +43,21 @@
                 chainmail body armor, is composed of 74 Rorschach-inspired shapes that were lasercut from wooden birch
                 panels.
             </p>
+        </div>
+        <div class="project-dets">
+            Typeface — ...<br>
+            Paper — ... 100GR<br>
+            Printer — KABK Computer Workshop<br>
+            Material — Birch wood, paper clips<br>
             <br>
-            <p id="projectDetails">
-                Typeface — ...<br>
-                Paper — ... 100GR<br>
-                Printer — KABK Computer Workshop<br>
-                Material — Birch wood, paper clips<br>
-                <br>
-                Publication · Installation · CAD · Textile<br>
-                31 pages (5 folders) | 225 × 310 mm | English<br>
-                2000 × 1500 mm<br>
-                The Hague, December 2023
-            </p>
+            Publication · Installation · CAD · Textile<br>
+            31 pages (5 folders) | 225 × 310 mm | English<br>
+            2000 × 1500 mm<br>
+            The Hague, December 2023
         </div>
     </div>
 
-    <div class="muscle">
+    <div class="subpage">
         <div class="vimeo-container sixteen-nine-container">
             <iframe class="vimeo-video sixteen-nine-video"
                 src="https://player.vimeo.com/video/974391379?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -53,21 +67,14 @@
         </div>
         <img src="../Archive/7_utopia/IMG_2906 copy.webp" loading="lazy">
         <img src="../Archive/7_utopia/IMG_3115.webp" loading="lazy">
-
-        <hr class="line">
-
-        <div class="arrowToggle">
-            <a id="prevLink" href="8_anna.html">← Prev</a>&nbsp;&nbsp;
-            <a id="nextLink" href="6_metal.html">Next →</a>
-        </div>
-
-        <div class="footer">
-            <div class="contact cell">olivia2huynh[at]gmail.com</div>
-            <div class="socials cell">Instagram</div>
-            <div class="copyright cell">© 2025 Olivia Huynh. All Rights Researved</div>
-        </div>
     </div>
 
+    <div class="extra-page" id="extra-page-id">
+        <div class="project-extra-desc"></div>
+        <div class="topBtn">
+            <a href="#page-id">↑<br>back to top</a>
+        </div>
+    </div>
 
 
     <script src="../index-new.js"></script>
