@@ -236,6 +236,8 @@ a {
     position: relative;
     width: 100%;
     overflow: hidden;
+
+    margin-top: 10rem;
 }
 
 iframe.vimeo-video {
@@ -283,6 +285,10 @@ iframe.ether-video {
 
 iframe.human-video {
     width: 133.33%;
+}
+
+.vimeo-spacer{
+    height: 10rem;
 }
 
 
@@ -334,4 +340,11 @@ iframe.human-video {
         text-align: right;
     }
 
+
+    .vimeo-container {
+        margin-top: 0rem;
+    }
+    .vimeo-spacer{
+        height: 0rem;
+    }
 }
