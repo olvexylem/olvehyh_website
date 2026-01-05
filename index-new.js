@@ -1,15 +1,36 @@
+// enter screen
+document.addEventListener("DOMContentLoaded", () => {
+  const screen = document.querySelector('.enter-screen');
+
+  if (!sessionStorage.getItem('seenEnterScreen')) {
+    const delays = [0, 600, 1200]; // stagger delays in ms
+    const totalTime = Math.max(...delays) + 1000 + 1000; // longest delay + typing (1s) + 1s wait
+
+    setTimeout(() => {
+      screen.style.transition = "opacity 0.5s";
+      screen.style.opacity = 0;
+      setTimeout(() => screen.remove(), 500);
+    }, totalTime);
+
+    sessionStorage.setItem('seenEnterScreen', 'true');
+  } else screen.remove();
+});
+
+
+
+
 // copyright
 document.querySelector(".copyright").addEventListener("click", function () {
-    const symbol = this.querySelector(".copyright_symbol");
-    const text = this.querySelector(".copyright_text");
+  const symbol = this.querySelector(".copyright_symbol");
+  const text = this.querySelector(".copyright_text");
 
-    if (symbol.style.display === "none") {
-        symbol.style.display = "inline";
-        text.style.display = "none";
-    } else {
-        symbol.style.display = "none";
-        text.style.display = "inline";
-    }
+  if (symbol.style.display === "none") {
+    symbol.style.display = "inline";
+    text.style.display = "none";
+  } else {
+    symbol.style.display = "none";
+    text.style.display = "inline";
+  }
 });
 
 
