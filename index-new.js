@@ -17,6 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// menu 
+// Select all nav links and the checkbox
+  const navCheckbox = document.getElementById('navAnkh');
+  const navLinks = document.querySelectorAll('.navText a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navCheckbox.checked = false; // uncheck the checkbox
+    });
+  });
+
+
 
 
 // copyright
