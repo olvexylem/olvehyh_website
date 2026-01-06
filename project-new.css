@@ -319,6 +319,14 @@ iframe.human-video {
     height: 10rem;
 }
 
+.ankh_symbol:hover,
+.copyright_symbol:hover,
+.navText a:hover,
+.name:hover{
+  opacity: 50%;
+}
+
+
 
 
 

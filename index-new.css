@@ -137,8 +137,8 @@ body {
   overflow: visible;
   white-space: nowrap;
   cursor: pointer;
-  animation: blink-on-load 1s ease-in-out 3;
-  animation-delay: 1.2s;
+  animation: blink-on-load 2s ease-in-out 3;
+  animation-delay: 4s;
 
   position: fixed;
   bottom: 1rem;
@@ -164,8 +164,8 @@ body:has(#navAnkh:checked) .navLinks {
   grid-column: 1 / span 1;
   font-size: 15pt;
   line-height: 11pt;
-  animation: blink-on-load 1s ease-in-out 3;
-  animation-delay: 1.2s;
+  animation: blink-on-load 2s ease-in-out 3;
+  animation-delay: 4s;
 }
 
 @keyframes blink-on-load {
@@ -355,7 +355,8 @@ body:has(#filter-plus:checked) .filter_status label {
   grid-column: 1 / span 1;
   background-color: white;
   width: fit-content;
-  padding: 1rem;
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
 
   font-size: 9pt;
   text-transform: uppercase;
@@ -363,11 +364,7 @@ body:has(#filter-plus:checked) .filter_status label {
 }
 
 .filterOption {
-  margin-bottom: 0.2rem;
-}
-
-.filterOption:hover {
-  opacity: 50%;
+  line-height: 16pt;
 }
 
 .filterToggle_options input[type="radio"] {
@@ -598,99 +595,19 @@ input[type="radio"] {
   align-self: end;
 }
 
-.experience_text {
-  display: grid;
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  align-items: start;
-
-  font-size: 9pt;
-  text-align: left;
-
-  margin-inline: 1rem;
-  width: calc(100% - 2rem);
-  height: 200vh;
-}
-
-.experience_text .experienceTitle {
-  grid-row: 2 / span 1;
-  grid-column: 3 / span 1;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.experience_text .experienceOlivia {
-  grid-row: 2 / span 1;
-  grid-column: 3 / span 3;
-  text-align: right;
-}
-
-
-.expRow {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-
-.expRow .date {
-  grid-column: 1 / span 1;
-  text-align: right;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.expRow .desc {
-  grid-column: 2 / span 2;
-  text-align: left;
-  padding-left: 25px;
-}
-
-ul {
-  padding-left: 1rem;
-  margin: 0;
-}
-
-.education_text {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  align-items: start;
-
-  font-size: 9pt;
-  text-align: left;
-
-  margin-inline: 1rem;
-  width: calc(100% - 2rem);
-  height: 100vh;
-}
-
-.educationTitle {
-  grid-row: 2 / span 1;
-  grid-column: 3 / span 1;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.educationOlivia {
-  grid-row: 2 / span 1;
-  grid-column: 3 / span 3;
-  text-align: right;
-}
-
-
 a {
   text-decoration: none;
   color: black;
 }
 
-
-
-
-
-
-
-
+.ankh_symbol:hover,
+.copyright_symbol:hover,
+.navText a:hover,
+.filterOption:hover,
+.filter_status label:hover,
+.name:hover{
+  opacity: 50%;
+}
 
 
 
@@ -784,72 +701,6 @@ a {
     grid-column: 1 / span 6;
     align-self: start;
     margin-top: 2rem;
-  }
-
-  .experience_text {
-    display: grid;
-    grid-template-rows: repeat(10, 1fr);
-    grid-template-columns: repeat(6, 1fr);
-    align-items: start;
-
-    font-size: 9pt;
-    text-align: left;
-
-    margin-inline: 1rem;
-    width: calc(100% - 2rem);
-    height: 250vh;
-  }
-
-  .experience_text .experienceTitle {
-    grid-row: 1 / span 1;
-    grid-column: 2 / span 1;
-    margin: 1rem;
-    padding-left: 25px;
-    align-self: end;
-  }
-
-  .experience_text .experienceOlivia {
-    grid-row: 2 / span 1;
-    grid-column: 1 / span 6;
-  }
-
-  .expRow {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .expRow .date {
-    grid-column: 1 / span 1;
-  }
-
-  .expRow .desc {
-    grid-column: 2 / span 5;
-  }
-
-  .education_text {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(6, 1fr);
-    align-items: start;
-
-    font-size: 9pt;
-    text-align: left;
-
-    margin-inline: 1rem;
-    width: calc(100% - 2rem);
-    height: 100vh;
-  }
-
-  .educationTitle {
-    grid-row: 1 / span 1;
-    grid-column: 2 / span 1;
-    margin: 1rem;
-    padding-left: 25px;
-    align-self: end;
-  }
-
-  .educationOlivia {
-    grid-row: 2 / span 1;
-    grid-column: 1 / span 6;
   }
 
   .navLinks {
