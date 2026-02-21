@@ -1,20 +1,19 @@
-// enter screen
-document.addEventListener("DOMContentLoaded", () => {
-  const screen = document.querySelector('.enter-screen');
+// load screen
+const screen = document.getElementById("enter-screen");
 
-  if (!sessionStorage.getItem('seenEnterScreen')) {
-    const delays = [0, 600, 1200]; // stagger delays in ms
-    const totalTime = Math.max(...delays) + 1000 + 1000; // longest delay + typing (1s) + 1s wait
+if (!sessionStorage.getItem("loadingShown") && screen) {
+  setTimeout(() => {
+    screen.classList.add("fade-out");
 
-    setTimeout(() => {
-      screen.style.transition = "opacity 0.5s";
-      screen.style.opacity = 0;
-      setTimeout(() => screen.remove(), 500);
-    }, totalTime);
+    screen.addEventListener("transitionend", () => {
+      screen.remove();
+    }, { once: true });
 
-    sessionStorage.setItem('seenEnterScreen', 'true');
-  } else screen.remove();
-});
+    sessionStorage.setItem("loadingShown", "true");
+  }, 2000);
+} else if (screen) {
+  screen.remove();
+}
 
 
 // menu 
@@ -47,31 +46,54 @@ document.querySelector(".copyright").addEventListener("click", function () {
 
 
 
-//highlight scroll
-const carousel = document.getElementById("carousel");
-const slides = Array.from(carousel.children);
-const slideWidth = window.innerWidth;
-let index = 0;
-const speed = 4000; // ms between slides
+const projects = [
+  { img: "Archive/31_PHARAOH/FINAL/PHARAOH_03.png"},
+  { img: "Archive/26_RUTH/FINAL/RUTH_01.webp"},
+  { img: "Archive/14_SU/SU_05.webp"},
+  { img: "Archive/25_CATALOGUE/FINAL/BDBD_01.webp"},
+  { img: "Archive/16_ETHER/FINAL/PHOTOGRAPY/ETHER_IMG_03.webp"}
+];
 
-// Clone slides for seamless looping
-slides.forEach(slide => {
-  carousel.appendChild(slide.cloneNode(true));
+const carousel = document.getElementById("carousel");
+
+// Generate slides
+projects.forEach(project => {
+  carousel.insertAdjacentHTML("beforeend", `
+    <article class="slide">
+      <img src="${project.img}" alt="${project.title}">
+      <div class="slide-caption">${project.title ?? ""}</div>
+    </article>
+  `);
 });
+
+let slides = Array.from(carousel.children);
+let index = 0;
+const speed = 5000;
+
+// Clone first slide
+const clone = slides[0].cloneNode(true);
+carousel.appendChild(clone);
+
+// Update slides AFTER cloning if needed
+slides = Array.from(carousel.children);
+
+function getSlideWidth() {
+  return slides[0].getBoundingClientRect().width;
+}
 
 function autoScroll() {
   index++;
-  carousel.scrollTo({
-    left: index * slideWidth,
-    behavior: "smooth"
-  });
+  const slideWidth = getSlideWidth();
 
-  // When reaching the cloned end, jump back to start
-  if (index === slides.length) {
+  carousel.style.transform = `translateX(-${index * slideWidth}px)`;
+  carousel.style.transition = "transform 0.6s ease";
+
+  if (index === slides.length - 1) {
     setTimeout(() => {
-      carousel.scrollLeft = 0;
+      carousel.style.transition = "none";
+      carousel.style.transform = "translateX(0)";
       index = 0;
-    }, 20000); // must be > scroll duration
+    }, 600);
   }
 }
 

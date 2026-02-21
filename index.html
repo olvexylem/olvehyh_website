@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olivia Huynh</title>
 
-    <link rel="stylesheet" href="index-new.css">
+    <link rel="stylesheet" href="Styles/index-new.css">
 </head>
 
 <body>
 
-    <div class="enter-screen">
-        <div id="enter_text">
-            <p class="vertical_text type">olivia</p>
-            <p class="vertical_text type delay-1">huynh</p>
-            <p class="vertical_text type delay-2 spaced">desiigner</p>
+    <div id="enter-screen">
+
+        <div class="enter-stage" id="enter-stage-one">
+            <div class="loading-container">
+                <div class="loading-bar"></div>
+            </div>
         </div>
+
     </div>
 
     <div class="skull">
@@ -36,17 +38,33 @@
                 <a href="#about_part">About</a>
             </span>
         </div>
-        <div class="name"><a href="index.html">Olivia Huynh</a></div>
+        <div class="name"><a href="index.html">O.H.</a></div>
     </div>
 
-    <div class="highlightsContainer">
-        <div class="highlightsScroll">
-            <div class="highlightsProject" id="carousel">
-                <div class="highlights"><img src="Archive/26_RUTH/FINAL/RUTH_01.webp"></div>
-                <div class="highlights"><img src="Archive/14_SU/SU_05.webp"></div>
-                <div class="highlights"><img src="Archive/25_CATALOGUE/FINAL/BDBD_01.webp"></div>
-                <div class="highlights"><img src="Archive/16_ETHER/FINAL/PHOTOGRAPY/ETHER_IMG_03.webp"></div>
-            </div>
+
+    <div class="carousel">
+        <div class="carousel-track" id="carousel">
+
+            <article class="slide">
+                <img src="Archive/26_RUTH/FINAL/RUTH_01.webp" alt="Women in Print: Ruth Gottstein">
+                <!-- <div class="slide-caption">Women in Print: Ruth Gottstein · 2025</div> -->
+            </article>
+
+            <article class="slide">
+                <img src="Archive/14_SU/SU_05.webp" alt="Sususu Photographs">
+                <!-- <div class="slide-caption">Sususu Photographs · 2024</div> -->
+            </article>
+
+            <article class="slide">
+                <img src="Archive/25_CATALOGUE/FINAL/BDBD_01.webp" alt="Book Catalogue">
+                <!-- <div class="slide-caption">Book Catalogue · 2025</div> -->
+            </article>
+
+            <article class="slide">
+                <img src="Archive/16_ETHER/FINAL/PHOTOGRAPY/ETHER_IMG_03.webp" alt="Ether project">
+                <!-- <div class="slide-caption">Ether · 2024</div> -->
+            </article>
+
         </div>
     </div>
 
@@ -57,6 +75,8 @@
             <input type="checkbox" id="filter-plus">
             <label for="filter-plus">+</label>
         </div>
+
+        <div class="work-title">Portofolio</div>
 
         <div class="filter_indexView">
             <input type="radio" name="display-type" id="display-image" checked>
@@ -77,53 +97,33 @@
                     <span class="categoryCount"></span>
                 </div>
                 <div class="filterOption">
-                    <input type="radio" name="filter" value="film" id="film" />
-                    <label for="film">Film</label>
+                    <input type="radio" name="filter" value="commission" id="commission" />
+                    <label for="commission">commission</label>
                     <span class="categoryCount"></span>
                 </div>
                 <div class="filterOption">
-                    <input type="radio" name="filter" value="image" id="image" />
-                    <label for="image">Image</label>
+                    <input type="radio" name="filter" value="exhibitions" id="exhibitions" />
+                    <label for="exhibitions">exhibitions</label>
                     <span class="categoryCount"></span>
                 </div>
                 <div class="filterOption">
-                    <input type="radio" name="filter" value="installation" id="installation" />
-                    <label for="installation">Installation</label>
+                    <input type="radio" name="filter" value="ai-cgi" id="ai-cgi" />
+                    <label for="ai-cgi">ai / cgi</label>
                     <span class="categoryCount"></span>
                 </div>
                 <div class="filterOption">
-                    <input type="radio" name="filter" value="print" id="print" />
-                    <label for="print">Print</label>
+                    <input type="radio" name="filter" value="video-image" id="video-image" />
+                    <label for="video-image">video / image</label>
                     <span class="categoryCount"></span>
                 </div>
                 <div class="filterOption">
-                    <input type="radio" name="filter" value="textile" id="textile" />
-                    <label for="textile">Textile</label>
-                    <span class="categoryCount"></span>
-                </div>
-                <div class="filterOption">
-                    <input type="radio" name="filter" value="illustration" id="illustration" />
-                    <label for="illustration">Illustration</label>
+                    <input type="radio" name="filter" value="graphic-design" id="graphic-design" />
+                    <label for="graphic-design">graphic design</label>
                     <span class="categoryCount"></span>
                 </div>
                 <div class="filterOption">
                     <input type="radio" name="filter" value="code" id="code" />
-                    <label for="code">Code</label>
-                    <span class="categoryCount"></span>
-                </div>
-                <div class="filterOption">
-                    <input type="radio" name="filter" value="typeface" id="typeface" />
-                    <label for="typeface">Typeface</label>
-                    <span class="categoryCount"></span>
-                </div>
-                <div class="filterOption">
-                    <input type="radio" name="filter" value="object" id="object" />
-                    <label for="object">Object</label>
-                    <span class="categoryCount"></span>
-                </div>
-                <div class="filterOption">
-                    <input type="radio" name="filter" value="sound" id="sound" />
-                    <label for="sound">Sound</label>
+                    <label for="code">code</label>
                     <span class="categoryCount"></span>
                 </div>
             </div>
@@ -132,7 +132,7 @@
         <div class="projectGallery" id="projectGallery-id">
             <div class="projectContainer">
 
-                <!-- <div class="projectBox print">
+                <!-- <div class="projectBox commission graphic-design">
                     <a href="">
                         <div class="text-container">
                             <span class="projectTitle">Citra Sasmita Cards</span><span>12/2025</span>
@@ -145,7 +145,7 @@
                     </div>
                 </div> -->
 
-                <div class="projectBox image">
+                <div class="projectBox ai-cgi">
                     <a href="Projects/30_pharaoh.html">
                         <div class="text-container">
                             <span class="projectTitle">Pharaoh</span><span>12/2025</span>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox print">
+                <div class="projectBox commission">
                     <a href="Projects/29_vitrine.html">
                         <div class="text-container">
                             <span class="projectTitle">Vitrine gallery</span><span>11/2025</span>
@@ -172,7 +172,7 @@
                 </div>
 
 
-                <div class="projectBox print">
+                <div class="projectBox commission graphic-design">
                     <a href="Projects/28_444.html">
                         <div class="text-container">
                             <span class="projectTitle">444</span><span>11/2025</span>
@@ -186,7 +186,7 @@
                 </div>
 
 
-                <!-- <div class="projectBox">
+                <!-- <div class="projectBox commission graphic-design">
                     <a href="">
                         <div class="text-container">
                             <span class="projectTitle">Mess (release pending)</span><span>11/2025</span>
@@ -200,7 +200,7 @@
                 </div> -->
 
 
-                <div class="projectBox installation object code">
+                <div class="projectBox exhibitions code">
                     <a href="Projects/27_Airplace.html">
                         <div class="text-container">
                             <span class="projectTitle">Air place</span><span>05/2025</span>
@@ -214,7 +214,7 @@
                 </div>
 
 
-                <div class="projectBox print">
+                <div class="projectBox graphic-design">
                     <a href="Projects/26_ruth.html">
                         <div class="text-container">
                             <span class="projectTitle">Women in Print: Ruth Gottstein</span><span>05/2025</span>
@@ -228,7 +228,7 @@
                 </div>
 
 
-                <div class="projectBox print image">
+                <div class="projectBox video-image graphic-design">
                     <a href="Projects/25_catalogue.html">
                         <div class="text-container">
                             <span class="projectTitle">Book Catalogue</span><span>05/2025</span>
@@ -242,7 +242,7 @@
                 </div>
 
 
-                <div class="projectBox print object">
+                <div class="projectBox graphic-design">
                     <a href="Projects/24_sanctuary.html">
                         <div class="text-container">
                             <span class="projectTitle">Sanctuary</span><span>04/2025</span>
@@ -256,7 +256,7 @@
                 </div>
 
 
-                <div class="projectBox film sound">
+                <div class="projectBox video-image">
                     <a href="Projects/23_memory.html">
                         <div class="text-container">
                             <span class="projectTitle">Home Cinema: Muscle Memory</span><span>03/2025</span>
@@ -270,7 +270,7 @@
                 </div>
 
 
-                <div class="projectBox code">
+                <div class="projectBox commission code">
                     <a href="Projects/22_metamorph.html">
                         <div class="text-container">
                             <span class="projectTitle">Metamorphoses exhibition official
@@ -286,7 +286,7 @@
                 </div>
 
 
-                <div class="projectBox film image sound">
+                <div class="projectBox videp-image">
                     <a href="Projects/21_relic.html">
                         <div class="text-container">
                             <span class="projectTitle">Eye Filmmuseum Amsterdam: Cyberpunk</span><span>02/2025</span>
@@ -300,7 +300,7 @@
                 </div>
 
 
-                <div class="projectBox illustration print">
+                <div class="projectBox commission graphic-design">
                     <a href="Projects/20_bus.html">
                         <div class="text-container">
                             <span class="projectTitle">Singapore Art Week Bus</span><span>01/2025</span>
@@ -314,7 +314,7 @@
                 </div>
 
 
-                <div class="projectBox typeface illustration">
+                <div class="projectBox graphic-design">
                     <a href="Projects/19_cloud.html">
                         <div class="text-container">
                             <span class="projectTitle">Explosion Typeface</span><span>12/2024</span>
@@ -328,7 +328,7 @@
                 </div>
 
 
-                <div class="projectBox print">
+                <div class="projectBox graphic-design">
                     <a href="Projects/18_dune.html">
                         <div class="text-container">
                             <span class="projectTitle">Appendices of Dune</span><span>12/2024</span>
@@ -357,7 +357,7 @@
                 </div>
 
 
-                <div class="projectBox film">
+                <div class="projectBox exhibitions video-image">
                     <a href="Projects/16_ether.html">
                         <div class="text-container">
                             <span class="projectTitle">Ether</span><span>10/2024</span>
@@ -372,7 +372,7 @@
                 </div>
 
 
-                <div class="projectBox print">
+                <div class="projectBox graphic-design video-image">
                     <a href="Projects/15_goodtime.html">
                         <div class="text-container">
                             <span class="projectTitle">Good Time</span><span>06/2024</span>
@@ -386,7 +386,7 @@
                 </div>
 
 
-                <div class="projectBox image">
+                <div class="projectBox video-image">
                     <a href="Projects/14_su.html">
                         <div class="text-container">
                             <span class="projectTitle">Sususu Photographs</span><span>05/2024</span>
@@ -400,7 +400,7 @@
                 </div>
 
 
-                <div class="projectBox print sound textile">
+                <div class="projectBox exhibition graphic-design">
                     <a href="Projects/13_inuit.html">
                         <div class="text-container">
                             <span class="projectTitle">ᑐᙵᓱ</span><span>05/2024</span>
@@ -414,7 +414,7 @@
                 </div>
 
 
-                <div class="projectBox film image">
+                <div class="projectBox video-image">
                     <a href="Projects/12_future.html">
                         <div class="text-container">
                             <span class="projectTitle">Future World</span><span>04/2024</span>
@@ -428,7 +428,7 @@
                 </div>
 
 
-                <div class="projectBox installation textile">
+                <div class="projectBox exhibition graphic-design">
                     <a href="Projects/11_pain.html">
                         <div class="text-container">
                             <span class="projectTitle">In The Event Of Pain, Try To Forget About
@@ -444,7 +444,7 @@
                 </div>
 
 
-                <div class="projectBox textile illustration">
+                <div class="projectBox graphic-design">
                     <a href="Projects/10_tee.html">
                         <div class="text-container">
                             <span class="projectTitle">Untitled Tshirts</span><span>12/2023</span>
@@ -472,7 +472,7 @@
                 </div>
 
 
-                <div class="projectBox print illustration">
+                <div class="projectBox graphic-design">
                     <a href="Projects/8_anna.html">
                         <div class="text-container">
                             <span class="projectTitle">Anna Firth Interview Transcript</span><span>12/2023</span>
@@ -486,7 +486,7 @@
                 </div>
 
 
-                <div class="projectBox installation print">
+                <div class="projectBox exhibition graphic-design">
                     <a href="Projects/7_utopia.html">
                         <div class="text-container">
                             <span class="projectTitle">Utopian Documentation</span><span>12/2023</span>
@@ -500,7 +500,7 @@
                 </div>
 
 
-                <div class="projectBox object">
+                <div class="projectBox graphic-design">
                     <a href="Projects/6_metal.html">
                         <div class="text-container">
                             <span class="projectTitle">Metal Pages</span><span>11/2023</span>
@@ -514,7 +514,7 @@
                 </div>
 
 
-                <div class="projectBox print">
+                <div class="projectBox graphic-design">
                     <a href="Projects/5_androids.html">
                         <div class="text-container">
                             <span class="projectTitle">Do Androids Dream of Electric Sheep?</span><span>06/2023</span>
@@ -528,7 +528,7 @@
                 </div>
 
 
-                <div class="projectBox print illustration film">
+                <div class="projectBox graphic-design video-image">
                     <a href="Projects/4_human.html">
                         <div class="text-container">
                             <span class="projectTitle">Human Routine Poster</span><span>04/2023</span>
@@ -542,7 +542,7 @@
                 </div>
 
 
-                <div class="projectBox print">
+                <div class="projectBox graphic-design">
                     <a href="Projects/3_dates.html">
                         <div class="text-container">
                             <span class="projectTitle">Important Dates Print</span><span>11/2022</span>
@@ -556,7 +556,7 @@
                 </div>
 
 
-                <div class="projectBox image">
+                <div class="projectBox ai-cgi">
                     <a href="Projects/2_porcelain.html">
                         <div class="text-container">
                             <span class="projectTitle">Porcelain Hallway</span><span>08/2022</span>
@@ -570,7 +570,7 @@
                 </div>
 
 
-                <div class="projectBox illustration">
+                <div class="projectBox video-image">
                     <a href="Projects/1_acid.html">
                         <div class="text-container">
                             <span class="projectTitle">Acid</span><span>03/2022</span>
@@ -590,37 +590,38 @@
     <div class="aboutSection" id="about_part">
 
         <div class="aboutPage biography_text">
+
+            <div class="contact_text">
+                olivia2huynh@gmail.com<br>
+                <a href="https://www.instagram.com/olvehyh/" target="_blank">@olvehyh</a> |
+                <a href="https://www.linkedin.com/in/olvehyh" target="_blank">linkedin</a><br>
+                <br>
+                Curated portfolio upon request · <a href="OH_CV_2026.pdf" target="_blank"><u>↓ CV PDF</u></a>
+            </div>
+
             <div class="aboutOlivia">
-                Olivia (b.2004, Sydney) is an interdisciplinary designer. Her work focuses on image, moving-image /
-                film, and
-                object-space. With a background in Visual Arts and Product Design in her formative years of school (SG),
-                she
-                deeply values abstract expression and precise craftsmanship. Now finishing her Bachelor of Graphic
+                <span class="about-title">About</span><br>
+                <br>
+                Olivia (b.2004, Sydney) is an interdisciplinary designer. Her work focuses on image, video, and space. With a background in Visual Arts and Product Design in her formative years of school (SG),
+                she deeply values unique expression and precise craftsmanship. Now finishing her Bachelor of Graphic
                 Design at the Royal Academy of Art (NL), Olivia’s contemporary design practice intertwines digital tools
                 with industrial craftsmanship.
+                <br><br>
+               <p class="experience">
+                <div class="role-container"><span>UNVEIL® (PARIS, FRANCE)</span><span>AUG - NOV 2025</span></div>
+                <div class="role-container"><span>GRAZIA (SINGAPORE)</span><span>JUL - OCT 2023</span></div>
+            </p>
             </div>
-            <div class="selectedClients_title">
-                Selected Clients
-            </div>
+
             <div class="selectedClients_text">
+                Selected Clients:<br>
+                <br>
                 Yeo Workshop<br>
                 Art Galleries Association Singapore
             </div>
-            <div class="contact_title">
-                Contact
-            </div>
-            <div class="contact_text">
-                olivia2huynh@gmail.com<br>
-                <a href="https://www.instagram.com/olvehyh/" target="_blank">@olvehyh</a> | 
-                <a href="https://www.linkedin.com/in/olvehyh" target="_blank">linkedin</a><br>
-                <br>
-                Curated portfolio upon request · <a href="OH_CV_2026.pdf" target="_blank"><u>Download CV PDF</u></a>
-            </div>
+
         </div>
 
-        <!-- <div class="aboutPortrait">
-            <div class="portraitContainer"><img src="PORTRAIT.png"></div>
-        </div> -->
     </div>
 
     <script src="index-new.js"></script>

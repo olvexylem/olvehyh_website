@@ -52,7 +52,7 @@ body {
 
 .skull {
     position: fixed;
-    margin: 1rem;
+    margin: 2rem;
     z-index: 2;
 
     font-size: 9pt;
@@ -60,7 +60,7 @@ body {
     letter-spacing: 0.03em;
     text-align: left;
 
-    width: calc(100vw - 2rem);
+    width: calc(100vw - 4rem);
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(6, 1fr);
@@ -75,8 +75,8 @@ body {
   animation-delay: 1.2s;
 
   position: fixed;
-  bottom: 1rem;
-  left: 1rem;
+  bottom: 2rem;
+  left: 2rem;
 }
 
 .navLinks {
@@ -91,7 +91,7 @@ body:has(#navAnkh:checked) .navLinks {
   align-items:flex-start;
   background: white;
   z-index: 10;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .ankh_symbol {
