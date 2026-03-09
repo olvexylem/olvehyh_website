@@ -271,7 +271,7 @@ body:has(#filter-plus:not(:checked)) .filterToggle_container {
   display: inline-block;
   transition: transform 0.3s ease;
   font-size: 15pt;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1;
   /* smooth rotation */
 }
@@ -304,10 +304,10 @@ body:has(#filter-plus:checked) .filter_status label {
   text-align: center;
 }
 
-.filtertwo .filter_title {
+/* .filtertwo .filter_title {
   grid-row: 1;
   grid-column: 1 / span 1;
-}
+} */
 
 .filtertwo .filter_toggle {
   grid-row: 1;
@@ -322,8 +322,7 @@ body:has(#filter-plus:checked) .filter_status label {
 
 .filter_status {
   grid-row: 1;
-  grid-column: 1 / span 1;
-  text-align: right;
+  grid-column: 1 / span 2;
 }
 
 .filterToggle_container {
@@ -487,6 +486,10 @@ input[type="radio"] {
   /* Optional: center the image crop */
   display: block;
 }
+
+/* #img_alignTop{
+  object-position: top;
+} */
 
 .imageDescription {
   position: absolute;
