@@ -557,10 +557,8 @@ input[type="radio"]:checked+label {
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    height: calc(var(--margin) * 3);
+    height: calc(var(--margin) * 2);
     cursor: pointer;
-
-    /* margin-top: calc(var(--margin) * 2); */
   }
 
   .float {
@@ -631,7 +629,7 @@ input[type="radio"]:checked+label {
     grid-column: 2 / span 3;
     width: fit-content;
     height: fit-content;
-    margin-top: calc(var(--margin) * 2);
+    margin-top: calc(var(--margin));
     padding-inline: var(--margin);
     padding-bottom: var(--margin);
     z-index: 10;
