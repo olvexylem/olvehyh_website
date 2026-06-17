@@ -234,7 +234,6 @@ u{
 }
 
 .page {
-  border: red 1px solid;
   width: calc(83.33vw - (var(--margin) * 6));
   height: 100%;
   min-height: 100%;
