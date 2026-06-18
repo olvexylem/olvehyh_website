@@ -146,6 +146,10 @@ textView.addEventListener('change', () => {
 
 // iphone scroll bar
 
+const interchange = document.querySelector(".interchange");
+const infoCat = document.querySelector("#info-cat");
+
+const progressBar = document.querySelector(".scroll-progress");
 const progressFill = document.querySelector(".scroll-progress-fill");
 const progressText = document.querySelector(".scroll-progress-text");
 
@@ -154,7 +158,7 @@ function updateProjectProgress() {
 
   if (maxScroll <= 0) {
     progressFill.style.width = "0%";
-    progressText.textContent = "0%";
+    if (progressText) progressText.textContent = "0%";
     return;
   }
 
@@ -162,8 +166,24 @@ function updateProjectProgress() {
   const percentage = Math.round(progress * 100);
 
   progressFill.style.width = `${percentage}%`;
-  progressText.textContent = `${percentage}%`;
+
+  if (progressText) {
+    progressText.textContent = `${percentage}%`;
+  }
+}
+
+function updateBarVisibility() {
+  const infoTop = infoCat.offsetTop;
+
+  progressBar.classList.toggle(
+    "hidden-bar",
+    interchange.scrollTop > infoTop * 0.5
+  );
 }
 
 projectGrid.addEventListener("scroll", updateProjectProgress);
+interchange.addEventListener("scroll", updateBarVisibility);
+
 updateProjectProgress();
+updateBarVisibility();
+

@@ -723,7 +723,7 @@ input[type="radio"]:checked+label {
     left: calc(var(--margin) * 1.5);
     bottom: calc(var(--margin) * 1.5);
     width: calc(100vw - (var(--margin) * 3));
-    height: calc(var(--margin) * 5);
+    height: calc(var(--margin) / 2);
     background: rgb(0, 255, 0);
     z-index: 40;
     pointer-events: none;
@@ -732,21 +732,26 @@ input[type="radio"]:checked+label {
   .scroll-progress-fill {
     width: 0%;
     height: 100%;
-    background: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
   }
 
   .scroll-progress-text {
     position: fixed;
     bottom: calc(var(--margin) * 3);
     right: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
 
     font-family: var(--font-book);
     font-size: var(--font-size);
     letter-spacing: var(--letter-spacing);
 
     z-index: 45;
-}
+  }
+
+  .hidden-bar {
+    opacity: 0;
+    pointer-events: none;
+  }
 
 
 }
