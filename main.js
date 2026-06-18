@@ -142,3 +142,28 @@ textView.addEventListener('change', () => {
     projectGrid.classList.add('text-view');
   }
 });
+
+
+// iphone scroll bar
+
+const progressFill = document.querySelector(".scroll-progress-fill");
+const progressText = document.querySelector(".scroll-progress-text");
+
+function updateProjectProgress() {
+  const maxScroll = projectGrid.scrollHeight - projectGrid.clientHeight;
+
+  if (maxScroll <= 0) {
+    progressFill.style.width = "0%";
+    progressText.textContent = "0%";
+    return;
+  }
+
+  const progress = projectGrid.scrollTop / maxScroll;
+  const percentage = Math.round(progress * 100);
+
+  progressFill.style.width = `${percentage}%`;
+  progressText.textContent = `${percentage}%`;
+}
+
+projectGrid.addEventListener("scroll", updateProjectProgress);
+updateProjectProgress();
