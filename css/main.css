@@ -330,13 +330,17 @@ input[type="radio"]:checked+label {
 
 .project {
   position: relative;
+
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+
   width: calc(50% - var(--margin) / 2);
-  height: fit-content;
+  height: auto;
+
   overflow: hidden;
   background-color: rgb(255, 255, 255);
+
   counter-increment: project-counter;
 }
 
@@ -364,15 +368,16 @@ input[type="radio"]:checked+label {
 
 .project-cover {
   width: 100%;
-  height: fit-content;
+  height: auto;
   overflow: hidden;
 }
 
 .project-cover img {
   display: block;
   width: 100%;
-  height: fit-content;
-  object-fit: fill;
+  height: auto;
+
+  object-fit: cover;
   object-position: center;
 }
 
