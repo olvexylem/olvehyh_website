@@ -1,25 +1,24 @@
-// load screen
+// LOAD SCREEN
+
 const screen = document.getElementById("loading-graphic");
 
-if (!sessionStorage.getItem("loadingShown") && screen) {
-  setTimeout(() => {
-    screen.classList.add("fade-out");
-
-    screen.addEventListener("transitionend", () => {
-      screen.remove();
-    }, { once: true });
-
-    sessionStorage.setItem("loadingShown", "true");
-  }, 2000);
-} else if (screen) {
-  screen.remove();
+if (screen) {
+  if (sessionStorage.getItem("loadingShown")) {
+    screen.remove();
+  } else {
+    setTimeout(() => {
+      screen.classList.add("fade-out");
+      screen.addEventListener("transitionend", () => screen.remove(), { once: true });
+      sessionStorage.setItem("loadingShown", "true");
+    }, 2000);
+  }
 }
 
 
+// CAROUSEL MECHANISM
 
-// carousell mechanism
-const highlightCarousel = document.querySelector('.highlight-image-carousel');
-const highlightSlides = document.querySelectorAll('.highlight-slide');
+const highlightCarousel = document.querySelector(".highlight-image-carousel");
+const highlightSlides = document.querySelectorAll(".highlight-slide");
 
 let highlightIndex = 0;
 
@@ -28,17 +27,14 @@ function goToHighlight(index) {
 
   highlightCarousel.scrollTo({
     left: highlightIndex * window.innerWidth,
-    behavior: 'smooth'
+    behavior: "smooth"
   });
 }
 
-setInterval(() => {
-  goToHighlight(highlightIndex + 1);
-}, 3000); 
+setInterval(() => goToHighlight(highlightIndex + 1), 3000);
 
 
-
-// menu toggle
+// MENU TOGGLE
 
 const menuBtn = document.querySelector(".menu-btn");
 const menuOverlay = document.querySelector(".menu-overlay");
@@ -55,96 +51,83 @@ function closeMenu() {
 }
 
 menuBtn.addEventListener("click", () => {
-  if (menuOverlay.classList.contains("hidden")) {
-    openMenu();
-  } else {
-    closeMenu();
-  }
+  menuOverlay.classList.contains("hidden") ? openMenu() : closeMenu();
 });
 
-menuLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    closeMenu();
-  });
-});
+menuLinks.forEach(link => link.addEventListener("click", closeMenu));
 
 
-// filter menu toggle
+// FILTER MENU TOGGLE
 
-const filterToggle = document.querySelector('.filter-toggle');
-const filterMenu = document.querySelector('.filter-menu');
-const filterIcon = document.querySelector('.filter-icon');
+const filterToggle = document.querySelector(".filter-toggle");
+const filterMenu = document.querySelector(".filter-menu");
+const filterIcon = document.querySelector(".filter-icon");
 
-filterToggle.addEventListener('click', () => {
-  filterMenu.classList.toggle('active');
-  filterIcon.classList.toggle('active');
+filterToggle.addEventListener("click", () => {
+  filterMenu.classList.toggle("active");
+  filterIcon.classList.toggle("active");
 });
 
 
-// filter mechanism
+// FILTER MECHANISM
 
 const filterInputs = document.querySelectorAll('input[name="filter"]');
-const projects = document.querySelectorAll('.project');
+const projects = document.querySelectorAll(".project");
 
 filterInputs.forEach(input => {
-  input.addEventListener('change', () => {
+  input.addEventListener("change", () => {
     const selectedFilter = input.value;
 
     projects.forEach(project => {
-      if (
-        selectedFilter === 'show-all' ||
+      project.style.display =
+        selectedFilter === "show-all" ||
         project.classList.contains(selectedFilter)
-      ) {
-        project.style.display = '';
-      } else {
-        project.style.display = 'none';
-      }
+          ? ""
+          : "none";
     });
   });
 });
 
-    // counting
+
+// COUNTING
 
 const filterOptions = document.querySelectorAll(
-  '.filter-option, .filterOption'
+  ".filter-option, .filterOption"
 );
 
 filterOptions.forEach(option => {
   const input = option.querySelector('input[name="filter"]');
-  const countSpan = option.querySelector('.categoryCount');
+  const countSpan = option.querySelector(".categoryCount");
 
   if (!input || !countSpan) return;
 
   const filter = input.value;
 
-  let count =
-    filter === 'show-all'
+  const count =
+    filter === "show-all"
       ? projects.length
       : document.querySelectorAll(`.project.${filter}`).length;
 
   countSpan.textContent = count;
 });
 
-    // index view
 
-const imageView = document.getElementById('display-image');
-const textView = document.getElementById('display-text');
-const projectGrid = document.querySelector('.project-grid');
+// INDEX VIEW
 
-imageView.addEventListener('change', () => {
-  if (imageView.checked) {
-    projectGrid.classList.remove('text-view');
-  }
+const imageView = document.getElementById("display-image");
+const textView = document.getElementById("display-text");
+const projectGrid = document.querySelector(".project-grid");
+
+imageView.addEventListener("change", () => {
+  if (imageView.checked) projectGrid.classList.remove("text-view");
 });
 
-textView.addEventListener('change', () => {
-  if (textView.checked) {
-    projectGrid.classList.add('text-view');
-  }
+textView.addEventListener("change", () => {
+  if (textView.checked) projectGrid.classList.add("text-view");
 });
 
 
-// iphone scroll bar
+// IPHONE SCROLL BAR
 
 const interchange = document.querySelector(".interchange");
 const infoCat = document.querySelector("#info-cat");
@@ -156,14 +139,10 @@ const progressText = document.querySelector(".scroll-progress-text");
 function updateProjectProgress() {
   const maxScroll = projectGrid.scrollHeight - projectGrid.clientHeight;
 
-  if (maxScroll <= 0) {
-    progressFill.style.width = "0%";
-    if (progressText) progressText.textContent = "0%";
-    return;
-  }
-
-  const progress = projectGrid.scrollTop / maxScroll;
-  const percentage = Math.round(progress * 100);
+  const percentage =
+    maxScroll > 0
+      ? Math.round((projectGrid.scrollTop / maxScroll) * 100)
+      : 0;
 
   progressFill.style.width = `${percentage}%`;
 
@@ -173,11 +152,9 @@ function updateProjectProgress() {
 }
 
 function updateBarVisibility() {
-  const infoTop = infoCat.offsetTop;
-
   progressBar.classList.toggle(
     "hidden-bar",
-    interchange.scrollTop > infoTop * 0.5
+    interchange.scrollTop > infoCat.offsetTop * 0.5
   );
 }
 
@@ -186,4 +163,3 @@ interchange.addEventListener("scroll", updateBarVisibility);
 
 updateProjectProgress();
 updateBarVisibility();
-
