@@ -390,7 +390,7 @@ input[type="radio"]:checked+label {
 }
 
 .project-grid.text-view .project {
-  width: 100%;
+  width: 50%;
   height: 16px;
   background: transparent;
 }
@@ -403,11 +403,17 @@ input[type="radio"]:checked+label {
 .project-grid.text-view .project-title {
   position: static;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   width: 100%;
   height: 16px;
   background: transparent;
   opacity: 1;
+}
+
+.project-grid.text-view .project-date {
+  display: block;
+  position: absolute;
+  right: 0;
 }
 
 .project-grid.text-view .project a:hover {
@@ -427,11 +433,13 @@ input[type="radio"]:checked+label {
 .about-desc {
   text-transform: none;
   font-size: 11pt;
-  line-height: 15pt;
+  line-height: 20pt;
   font-family: fantasy;
 
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
+
+  margin-top: var(--margin);
 }
 
 .contact-desc {
@@ -595,6 +603,10 @@ input[type="radio"]:checked+label {
 
   .project-grid.text-view .project {
     width: calc(100vw - (var(--margin) * 3));
+  }
+
+  .project-date {
+    display: none;
   }
 
   /* INFO */
