@@ -246,7 +246,7 @@ u {
   z-index: 10;
   width: fit-content;
   height: fit-content;
-  margin-top: calc(var(--margin) * 2);
+  margin-top: calc(var(--margin) * 1.75);
   padding-inline: var(--margin);
   padding-bottom: var(--margin);
   background-color: rgb(255, 255, 255);
@@ -583,7 +583,7 @@ input[type="radio"]:checked+label {
   .filter-menu {
     margin-top: calc(var(--margin) * 1.5);
     margin-block: var(--margin);
-    /* border: 1px red solid; */
+    margin-bottom: 0;
   }
 
   .filter-icon {
