@@ -240,6 +240,10 @@ u {
   margin-left: var(--margin);
 }
 
+.filter-toggle {
+  line-height: 7pt;
+}
+
 .filter-menu {
   display: none;
   grid-column: 2 / span 1;
@@ -263,7 +267,7 @@ u {
   display: inline-block;
   transition: transform 0.3s ease;
   font-size: 12pt;
-  transform: translate(0,0.25px);
+  transform: translate(0, 0.25px);
 }
 
 .filter-icon.active {
