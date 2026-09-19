@@ -1,37 +1,91 @@
-// LOAD SCREEN
+// PARIS TIMESTAMP
 
-const screen = document.getElementById("loading-graphic");
+const timestamp = document.getElementById("timestamp");
 
-if (screen) {
-  if (sessionStorage.getItem("loadingShown")) {
-    screen.remove();
-  } else {
-    setTimeout(() => {
-      screen.classList.add("fade-out");
-      screen.addEventListener("transitionend", () => screen.remove(), { once: true });
-      sessionStorage.setItem("loadingShown", "true");
-    }, 2000);
+function updateTimestamp() {
+  const parisTime = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Paris",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).format(new Date());
+
+  timestamp.textContent = `(FR) ${parisTime}`;
+}
+
+updateTimestamp();
+setInterval(updateTimestamp, 1000);
+
+// HIGH PROJECT CAROUSEL
+
+const highCarousel = document.querySelector(".highlight");
+const highSlides = document.querySelectorAll(".high_project");
+
+const highPrev = document.querySelector(".high-prev");
+const highNext = document.querySelector(".high-next");
+
+const highProjectLink = document.querySelector(".high-project-link");
+
+if (highCarousel && highSlides.length) {
+
+  // LEFT / RIGHT CLICK
+
+  let highIndex = 0;
+
+  function goToHighSlide(index) {
+
+    // Loop around
+    highIndex = (index + highSlides.length) % highSlides.length;
+
+    highCarousel.scrollTo({
+      left: highIndex * highCarousel.clientWidth,
+      behavior: "smooth"
+    });
   }
+
+  if (highPrev) {
+    highPrev.addEventListener("click", () => {
+      goToHighSlide(highIndex - 1);
+    });
+  }
+
+  if (highNext) {
+    highNext.addEventListener("click", () => {
+      goToHighSlide(highIndex + 1);
+    });
+  }
+
+
+  // UPDATE PROJECT TITLE + LINK
+
+  if (highProjectLink) {
+
+    const highObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            const slide = entry.target;
+
+            highProjectLink.textContent = slide.dataset.title;
+            highProjectLink.href = slide.dataset.url;
+          }
+
+        });
+      },
+      {
+        root: highCarousel,
+        threshold: 0.6
+      }
+    );
+
+    highSlides.forEach(slide => {
+      highObserver.observe(slide);
+    });
+
+  }
+
 }
-
-
-// CAROUSEL MECHANISM
-
-const highlightCarousel = document.querySelector(".highlight-image-carousel");
-const highlightSlides = document.querySelectorAll(".highlight-slide");
-
-let highlightIndex = 0;
-
-function goToHighlight(index) {
-  highlightIndex = (index + highlightSlides.length) % highlightSlides.length;
-
-  highlightCarousel.scrollTo({
-    left: highlightIndex * window.innerWidth,
-    behavior: "smooth"
-  });
-}
-
-setInterval(() => goToHighlight(highlightIndex + 1), 3000);
 
 
 // MENU TOGGLE
@@ -81,7 +135,7 @@ filterInputs.forEach(input => {
     projects.forEach(project => {
       project.style.display =
         selectedFilter === "show-all" ||
-        project.classList.contains(selectedFilter)
+          project.classList.contains(selectedFilter)
           ? ""
           : "none";
     });
@@ -163,3 +217,4 @@ interchange.addEventListener("scroll", updateBarVisibility);
 
 updateProjectProgress();
 updateBarVisibility();
+
