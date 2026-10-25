@@ -229,13 +229,13 @@ u {
 
 .credits {
   position: absolute;
-  bottom: calc(var(--margin) * 6);
+  bottom: calc(var(--margin) * 4);
   left: calc(var(--margin) * 9);
 }
 
 .timestamp {
   position: absolute;
-  bottom: calc(var(--margin) * 5);
+  bottom: calc(var(--margin) * 4);
   right: calc(var(--margin) * 5);
   z-index: 50;
   font-family: var(--font-book);
@@ -286,7 +286,7 @@ u {
 
   z-index: 20;
 
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-radius: 999px;
   padding: 2px 8px;
 
@@ -342,7 +342,8 @@ u {
 
 .highlight img {
   display: block;
-  height: 75%;
+  height: 70%;
+  width: auto;
 
   object-fit: cover;
   object-position: center;
@@ -480,7 +481,7 @@ input[type="radio"]:checked+label {
   justify-content: center;
 
   width: calc((100%/3) - (var(--margin) / 1.5));
-  aspect-ratio: 1;
+  aspect-ratio: 4/5;
 
   overflow: hidden;
   background-color: rgb(255, 255, 255);
@@ -493,10 +494,10 @@ input[type="radio"]:checked+label {
   top: 0;
   left: 0;
   display: none;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--margin);
+  line-height: var(--line-height);
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -508,7 +509,7 @@ input[type="radio"]:checked+label {
 }
 
 .project-title::before {
-  content: counter(project-counter, decimal-leading-zero);
+  /* content: counter(project-counter, decimal-leading-zero); */
   font-size: var(--font-size);
 }
 
@@ -521,7 +522,7 @@ input[type="radio"]:checked+label {
 .project-cover img {
   display: block;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4/5;
 
   object-fit: cover;
   object-position: center;
@@ -544,9 +545,7 @@ input[type="radio"]:checked+label {
   height: 16px;
   background: transparent;
 
-  margin-left: calc(var(--margin) * 6);
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr); */
+  margin-left: calc(var(--margin) * 2);
 }
 
 .project-grid.text-view .project a {
@@ -558,8 +557,10 @@ input[type="radio"]:checked+label {
   position: static;
   display: flex;
   justify-content: left;
+  align-items: start;
+
   width: 100%;
-  height: 16px;
+  height: 15px;
   background: transparent;
   opacity: 1;
 }
@@ -579,15 +580,13 @@ input[type="radio"]:checked+label {
 }
 
 .project-grid.text-view .project a:hover {
-  opacity: 50%;
+  opacity: 20%;
 }
 
 /* 10. ABOUT */
 
-.info-cat,
 .about-cat {
   z-index: 10;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -602,9 +601,12 @@ input[type="radio"]:checked+label {
 }
 
 .info-cat {
+  z-index: 10;
   display: flex;
-  flex-direction: column;
-
+  align-items: end;
+  justify-content: left;
+  padding-left: calc(var(--margin) * 9);
+  padding-bottom: calc(var(--margin) * 4);
   position: relative;
 }
 
@@ -651,7 +653,7 @@ input[type="radio"]:checked+label {
 
   .timestamp {
     position: absolute;
-    bottom: calc(var(--margin) * 3);
+    bottom: calc(var(--margin) * 4);
     right: calc(var(--margin) * 3);
     z-index: 50;
     font-family: var(--font-book);
@@ -665,7 +667,7 @@ input[type="radio"]:checked+label {
     left: calc(var(--margin) * 6.5);
   }
 
-  
+
   .menu-about-btn {
     position: absolute;
     top: calc(var(--margin) * 6.5);
@@ -727,32 +729,25 @@ input[type="radio"]:checked+label {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
-    scroll-padding-inline: 25vw;
   }
 
   .high-project-link {
     position: absolute;
     left: 0;
-    top: calc(100% - (var(--margin) * 4));
+    top: calc(100% - (var(--margin) * 5));
     margin-left: calc(var(--margin) * 3);
 
     width: fit-content;
     height: fit-content;
 
     z-index: 20;
-
-    border: 1px solid black;
-    border-radius: 999px;
-    padding: 2px 8px;
-
+    
     text-decoration: none;
     color: black;
   }
 
   .high_project {
     height: 100%;
-    /* flex: 0 0 150vw; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -816,12 +811,18 @@ input[type="radio"]:checked+label {
   }
 
   .info-cat {
-    width: 100vw;
+    z-index: 10;
+    display: flex;
+    align-items: end;
+    justify-content: left;
+    padding-left: calc(var(--margin) * 6.5);
+    padding-bottom: calc(var(--margin) * 4);
+    position: relative;
   }
 
   .desc-box {
     position: absolute;
-    width: calc(100vw - (var(--margin) * 6));
+    width: fit-content
   }
 
   /* SCROLL PROGRESS */

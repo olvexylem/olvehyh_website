@@ -5,6 +5,6 @@ textBtn.addEventListener("click", () => {
   overview.classList.toggle("is-open");
 
   textBtn.textContent = overview.classList.contains("is-open")
-    ? "[ close ]"
-    : "[ read more ]";
+    ? "close"
+    : "read more";
 });

@@ -10,7 +10,7 @@ function updateTimestamp() {
     hour12: false
   }).format(new Date());
 
-  timestamp.textContent = `(FR) ${parisTime}`;
+  timestamp.textContent = `(CET) ${parisTime}`;
 }
 
 updateTimestamp();
@@ -179,42 +179,4 @@ imageView.addEventListener("change", () => {
 textView.addEventListener("change", () => {
   if (textView.checked) projectGrid.classList.add("text-view");
 });
-
-
-// IPHONE SCROLL BAR
-
-const interchange = document.querySelector(".interchange");
-const infoCat = document.querySelector("#info-cat");
-
-const progressBar = document.querySelector(".scroll-progress");
-const progressFill = document.querySelector(".scroll-progress-fill");
-const progressText = document.querySelector(".scroll-progress-text");
-
-function updateProjectProgress() {
-  const maxScroll = projectGrid.scrollHeight - projectGrid.clientHeight;
-
-  const percentage =
-    maxScroll > 0
-      ? Math.round((projectGrid.scrollTop / maxScroll) * 100)
-      : 0;
-
-  progressFill.style.width = `${percentage}%`;
-
-  if (progressText) {
-    progressText.textContent = `${percentage}%`;
-  }
-}
-
-function updateBarVisibility() {
-  progressBar.classList.toggle(
-    "hidden-bar",
-    interchange.scrollTop > infoCat.offsetTop * 0.5
-  );
-}
-
-projectGrid.addEventListener("scroll", updateProjectProgress);
-interchange.addEventListener("scroll", updateBarVisibility);
-
-updateProjectProgress();
-updateBarVisibility();
 
