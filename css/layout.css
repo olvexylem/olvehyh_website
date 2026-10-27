@@ -1,0 +1,30 @@
+/* LAYOUT: the vertical page system */
+
+.interchange {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.page {
+  min-height: 100%;
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbars on every scroll container */
+
+.interchange,
+.work-cat,
+.highlight {
+  scrollbar-width: none;
+}
+
+.interchange::-webkit-scrollbar,
+.work-cat::-webkit-scrollbar,
+.highlight::-webkit-scrollbar {
+  display: none;
+}

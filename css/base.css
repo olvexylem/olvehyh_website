@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+/* BASE: fonts, variables, reset, shared typography, shared components */
+
+/* 1. FONTS: one family, styles chosen with font-weight / font-style */
+
+@font-face {
+  font-family: 'Oracle';
+  src: url('../FONTS/Oracle-Book-Trial.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oracle';
+  src: url('../FONTS/Oracle-BookItalic-Trial.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oracle';
+  src: url('../FONTS/Oracle-Bold-Trial.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oracle';
+  src: url('../FONTS/Oracle-BoldItalic-Trial.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oracle';
+  src: url('../FONTS/Oracle-Black-Trial.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oracle';
+  src: url('../FONTS/Oracle-BlackItalic-Trial.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 2. VARIABLES */
+
+:root {
+  --bg: #fff;
+  --text: #000;
+
+  --font: 'Oracle', sans-serif;
+  --font-size: 8pt;
+  --letter-spacing: 0.03em;
+  --line-height: 1.3;
+
+  /* spacing tokens */
+  --margin: 1rem;
+  --gutter: calc(var(--margin) * 3);               /* page edge */
+  --content-left: calc(var(--margin) * 9);         /* menu links, credits, info */
+  --content-bottom: calc(var(--margin) * 4);       /* credits, timestamp, info */
+  --menu-top: calc(var(--margin) * 7);             /* first menu link */
+  --filter-indent: calc(var(--margin) * 6);
+}
+
+/* 3. RESET / BASE */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;            /* all scrolling happens inside .interchange */
+
+  /* The flex centring also centres the fixed .home-btn horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--font-size);
+  letter-spacing: var(--letter-spacing);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;   /* normalize.css sets buttons to "none" */
+  cursor: pointer;
+}
+
+/* Visible keyboard focus (mouse clicks don't show it) */
+:focus-visible {
+  outline: 1px dotted var(--text);
+  outline-offset: 3px;
+}
+
+/* Text that screen readers read but nobody sees (names for icon-only controls) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* 4. SHARED TYPOGRAPHY */
+
+.menu-btn,
+.menu-overlay,
+.home-btn,
+.page {
+  text-transform: uppercase;
+}
+
+.menu-btn,
+.home-btn,
+.page {
+  line-height: var(--line-height);
+}
+
+h3 {
+  margin-top: calc(var(--margin) * 2);
+  margin-bottom: 2px;
+  opacity: 25%;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+u {
+  color: inherit;
+  text-underline-offset: 0.25em;
+}
+
+/* 5. SHARED COMPONENT: the outlined "pill" */
+
+.menu-btn,
+.home-btn,
+.filter-toggle,
+.high-project-link {
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  padding: 2px 8px;
+}

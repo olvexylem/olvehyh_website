@@ -1,0 +1,243 @@
+/* WORK: heading, filters, display icons, project grid */
+
+.work-cat {
+  margin-inline: var(--gutter);
+  overflow-y: auto;
+}
+
+.heading-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: var(--gutter);
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* FILTERS */
+
+.filter-toggle {
+  width: fit-content;
+  margin-left: var(--filter-indent);
+}
+
+.filter-menu {
+  display: none;
+  z-index: 10;
+  margin-top: calc(var(--margin) * 2);
+  margin-left: var(--filter-indent);
+}
+
+.filter-menu.active {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: fit-content;
+}
+
+.category-count::before {
+  content: "(";
+}
+
+.category-count::after {
+  content: ")";
+}
+
+/* Visually hidden, but still focusable and operable with the keyboard
+   (display: none would remove them from the tab order entirely) */
+input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  opacity: 0;
+}
+
+/* Show keyboard focus on the label next to the hidden radio */
+input[type="radio"]:focus-visible + label {
+  outline: 1px dotted var(--text);
+  outline-offset: 3px;
+}
+
+.filter-option {
+  width: fit-content;
+  line-height: calc(var(--line-height) * 1.3);
+}
+
+.filter-option:hover {
+  font-weight: 700;
+}
+
+.filter-option label {
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  opacity: 50%;
+}
+
+/* VIEW TOGGLE (image / text): two bare icons, the selected one solid */
+
+.index-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  justify-self: end;
+  margin-right: calc(var(--margin) * 2 - 6px);   /* the icon's edge, not its padding, sits at 2rem */
+}
+
+.index-display label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  cursor: pointer;
+  opacity: 30%;
+}
+
+.index-display input:checked + label {
+  opacity: 100%;          /* cancels the dimming rule the filter list uses */
+}
+
+/* Invisible, larger touch target: the icons keep their size, fingers get more room */
+.index-display label::after {
+  content: "";
+  position: absolute;
+  inset: -10px -4px;
+}
+
+.view-icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  overflow: visible;
+}
+
+/* PROJECT GRID (image view) */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--margin);   /* space between the images, rows and columns */
+  padding-bottom: var(--content-bottom);   /* space after the last row when scrolled to the end */
+}
+
+.project {
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.project-title {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+  line-height: var(--line-height);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.project:hover .project-title {
+  display: flex;
+}
+
+.project-cover {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.project-cover img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.project-medium {
+  display: none;
+}
+
+/* PROJECT LIST (text view): one plain row per project */
+
+.project-grid.text-view {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--margin);   /* text rows keep their original spacing */
+}
+
+.project-grid.text-view .project {
+  display: block;
+  aspect-ratio: auto;          /* the 4 / 5 card shape does not apply to a text row */
+  width: auto;                 /* fills the column; the margins below set the row's edges */
+  height: auto;                /* the row is as tall as its text */
+  margin: 0 calc(var(--margin) * 10) 0 var(--filter-indent);   /* left edge = filter button */
+  overflow: visible;
+  background: transparent;
+}
+
+.project-grid.text-view .project-cover {
+  display: none;
+}
+
+.project-grid.text-view .project a {
+  display: block;
+}
+
+.project-grid.text-view .project-title {
+  position: static;
+  display: block;
+  height: auto;
+  background: transparent;
+  text-align: left;
+}
+
+/* Hover arrow: sits at the menu button's left edge and points at the title */
+
+.project-grid.text-view .project::before {
+  content: "→";
+  position: absolute;
+  top: 0;
+  left: calc(var(--menu-edge, var(--margin) * 2) - var(--filter-indent));   /* the menu button's left edge, measured by filter.js */
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .project-grid.text-view .project:has(a[href]):hover::before {
+    opacity: 1;   /* only rows that actually link somewhere */
+  }
+
+  .project-grid.text-view .project:has(a[href]):hover .project-title > span:first-child {
+    font-weight: 700;   /* the title only, not the medium or the date */
+  }
+}
+
+/* medium and date sit at the right end of the row */
+
+.project-grid.text-view .project-medium,
+.project-grid.text-view .project-date {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.project-grid.text-view .project-medium {
+  margin-right: calc(var(--margin) * 6);
+}

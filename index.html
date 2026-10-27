@@ -9,26 +9,29 @@
     <meta name="description" content="Portfolio Website" />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="black-square-favicon.png" />
 
     <title>Olivia Huynh</title>
 
     <!-- links for extensions and dependencies -->
 
-    <!-- css normalize -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="css/main.css?ver=1.0">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/highlight.css">
+    <link rel="stylesheet" href="CSS/work.css">
+    <link rel="stylesheet" href="CSS/about.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
 </head>
 
 <body>
 
     <a class="home-btn" href="#high-cat">Olivia Huỳnh</a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
         <a class="menu-high-btn" href="#high-cat">pinned</a>
         <a class="menu-about-btn" href="#about-cat">about</a>
         <a class="menu-work-btn" href="#work-cat">work</a>
@@ -40,57 +43,56 @@
         </div>
     </div>
 
-    <div class="timestamp" id="timestamp">Test</div>
+    <div class="timestamp" id="timestamp"></div>
 
-    <!-- <div class="scroll-progress">
-        <div class="scroll-progress-fill"></div>
-    </div> -->
-
-    <!-- <div class="scroll-progress-text">0%</div> -->
-
-    <div class="interchange">
+<div class="interchange">
 
         <div class="high-cat page" id="high-cat">
 
             <div class="highlight">
 
-                <div class="high_project" data-title="citra ↗" data-url="project html/31_citra.html">
-                    <img src="ARCHIVE/251203_CITRA/SELECTION/2_CITRA_CARD.png">
+                <div class="high-project" data-title="citra ↗" data-url="PROJECTS/251203_CITRA.html">
+                    <img src="ARCHIVE/251203_CITRA/SELECTION/2_CITRA_CARD.png" alt="Citra, card design">
                 </div>
 
-                <div class="high_project" data-title="vitrine ↗" data-url="project html/29_vitrine.html">
-                    <img src="ARCHIVE/251103_VITRINE/POSTER/1_VITRINE_POSTER.webp">
+                <div class="high-project" data-title="vitrine ↗" data-url="PROJECTS/251103_VITRINE.html">
+                    <img src="ARCHIVE/251103_VITRINE/POSTER/1_VITRINE_POSTER.webp" alt="Vitrine Gallery, poster"
+                        loading="lazy">
                 </div>
 
-                <div class="high_project" data-title="runner's high ↗" data-url="project html/29_444.html">
-                    <img src="ARCHIVE/251205_RUNNERS_HIGH/BOOK_RELEASE/444_01.jpg">
+                <div class="high-project" data-title="runner's high ↗" data-url="PROJECTS/251205_RUNNERS_HIGH.html">
+                    <img src="ARCHIVE/251205_RUNNERS_HIGH/BOOK_RELEASE/444_01.jpg" alt="Runner's High, book release"
+                        loading="lazy">
                 </div>
 
-                <div class="high_project" data-title="catalogue ↗" data-url="project html/25_catalogue.html">
-                    <img src="ARCHIVE/250525_CATALOGUE/COMPRESSED/7_CATALOGUE_SPREAD.webp">
+                <div class="high-project" data-title="catalogue ↗" data-url="PROJECTS/250525_CATALOGUE.html">
+                    <img src="ARCHIVE/250525_CATALOGUE/COMPRESSED/7_CATALOGUE_SPREAD.webp"
+                        alt="Best Dutch Book Design catalogue, spread" loading="lazy">
                 </div>
 
-                <div class="high_project" data-title="ether ↗" data-url="project html/16_ether.html">
-                    <img src="ARCHIVE/241015_ETHER/BTS_COMPRESSED/IMG_0054.png">
+                <div class="high-project" data-title="ether ↗" data-url="PROJECTS/241015_ETHER.html">
+                    <img src="ARCHIVE/241015_ETHER/BTS_COMPRESSED/IMG_0054.png" alt="Ether, behind the scenes"
+                        loading="lazy">
                 </div>
 
-                <div class="high_project" data-title="ether ↗" data-url="project html/16_ether.html">
-                    <img src="ARCHIVE/241015_ETHER/PHOTOGRAPY/2_ETHER_PHOTO.webp">
+                <div class="high-project" data-title="ether ↗" data-url="PROJECTS/241015_ETHER.html">
+                    <img src="ARCHIVE/241015_ETHER/PHOTOGRAPY/2_ETHER_PHOTO.webp" alt="Ether, photograph"
+                        loading="lazy">
                 </div>
 
-                <div class="high_project" data-title="explosion typeface ↗" data-url="project html/19_explosion.html">
-                    <img src="ARCHIVE/250410_EXPLOSION/LETTER SKETCHES/bomb-e.png">
+                <div class="high-project" data-title="explosion typeface ↗" data-url="PROJECTS/250410_EXPLOSION.html">
+                    <img src="ARCHIVE/250410_EXPLOSION/SPECIMEN/explosion_3.webp"
+                        alt="Exploded typeface, sketch of the letter e" loading="lazy">
                 </div>
 
-                <div class="high_project" data-title="sanctuary ↗" data-url="project html/24_sanctuary.html">
-                    <img src="ARCHIVE/250411_SANCTUARY_QUESTIONNAIRE/SELECTION COMPRESSED/S_PHOTOSHOOT_02.jpeg">
+                <div class="high-project" data-title="sanctuary ↗" data-url="PROJECTS/250411_SANCTUARY_QUESTIONNAIRE.html">
+                    <img src="ARCHIVE/250411_SANCTUARY_QUESTIONNAIRE/SELECTION_COMPRESSED/S_PHOTOSHOOT_02.jpeg"
+                        alt="Sanctuary questionnaire, photoshoot" loading="lazy">
                 </div>
 
             </div>
 
-            <a class="high-project-link" href="citra.html">
-                CITRA
-            </a>
+            <a class="high-project-link" href="PROJECTS/251203_CITRA.html">citra ↗</a>
 
             <div class="high-prev"></div>
             <div class="high-next"></div>
@@ -99,379 +101,64 @@
         <div class="about-cat page" id="about-cat">
 
             <div class="about-desc">
-                <span style="opacity: 25%;">Olivia Huynh (b.2004, Sydney) is a </span><span
-                    style="opacity: 100%;">Pluridisciplinary Designer</span><span style="opacity: 25%;"> dedicated to
-                    bold imagery and atmospheric exploration. With a background in Illustration, Product Design, and
-                    a BA Degree in Graphic Design at the Royal Academy of Art The Hague, her practice combines digital technology and
-                    precise craftsmanship to explore intuitive visual expression.</span>
-                    </div>
+                Olivia Huynh (b.2004, Sydney) is a
+                <span class="bright">Pluridisciplinary Designer</span>
+                dedicated to bold imagery and atmospheric exploration. With a background in Illustration,
+                Product Design, and a BA Degree in Graphic Design at the Royal Academy of Art The Hague,
+                her practice combines digital technology and precise craftsmanship to explore intuitive
+                visual expression.
+            </div>
 
         </div>
 
         <div class="work-cat page" id="work-cat">
             <div class="heading-grid">
-                <div class="filter-toggle">filter</div>
-                <div class="index-display">
+                <button type="button" class="filter-toggle">filter</button>
+                <div class="index-display" role="radiogroup" aria-label="View">
                     <input type="radio" name="display-type" id="display-image" checked>
-                    <label for="display-image" class="display-image-icon"></label>
-                    &nbsp;&nbsp;
+                    <label for="display-image" title="Image view">
+                        <svg class="view-icon" viewBox="0 0 12 12" aria-hidden="true">
+                            <rect x="0.5" y="1.5" width="11" height="9" />
+                        </svg>
+                        <span class="sr-only">Image view</span>
+                    </label>
                     <input type="radio" name="display-type" id="display-text">
-                    <label for="display-text" class="display-text-icon"></label>
+                    <label for="display-text" title="Text view">
+                        <svg class="view-icon" viewBox="0 0 12 12" aria-hidden="true">
+                            <path d="M0.5 1.5h11M0.5 6h11M0.5 10.5h6" />
+                        </svg>
+                        <span class="sr-only">Text view</span>
+                    </label>
                 </div>
 
                 <div class="filter-menu">
 
                     <div class="filter-option">
                         <input type="radio" name="filter" value="show-all" id="show-all" checked />
-                        <span><label for="show-all">see all</label></span>
-                        <span class="categoryCount"></span>
+                        <label for="show-all">see all</label>
+                        <span class="category-count"></span>
                     </div>
                     <div class="filter-option">
                         <input type="radio" name="filter" value="graphic-design" id="graphic-design" />
                         <label for="graphic-design">graphic design</label>
-                        <span class="categoryCount"></span>
+                        <span class="category-count"></span>
                     </div>
                     <div class="filter-option">
                         <input type="radio" name="filter" value="image" id="image" />
                         <label for="image">image / video</label>
-                        <span class="categoryCount"></span>
+                        <span class="category-count"></span>
                     </div>
                     <div class="filter-option">
                         <input type="radio" name="filter" value="installations" id="installations" />
                         <label for="installations">installations</label>
-                        <span class="categoryCount"></span>
+                        <span class="category-count"></span>
                     </div>
                 </div>
 
             </div>
 
-            <div class="project-grid">
+            <div class="project-grid"></div>
 
-                <div class="project image">
-                    <a href="">
-                        <div class="project-title"><span>Morbid Case Study</span><span class="project-medium">image</span><span
-                                class="project-date">08 2026</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/260808_MORBID/COMPRESSED/magnific_0epLDGNTfW.png">
-                    </div>
-                </div>
-
-                <!-- <div class="project installations graphic-design image">
-                    <a href="">
-                        <div class="project-title"><span>Synthetic Transcendence</span><span
-                                class="project-medium">installation | graphic design | image</span><span class="project-date">05-2026</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/34_SYTHENTIC/test_01.JPG">
-                    </div>
-                </div> -->
-
-                <div class="project image">
-                    <a href="">
-                        <div class="project-title"><span>Antwerpen Sightseeing</span><span class="project-medium">image</span><span
-                                class="project-date">04 2026</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/260400_ANTWERPEN/SELECTION/3_ANTWERPEN.png">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/31_citra.html">
-                        <div class="project-title"><span>Citra</span><span class="project-medium">graphic design</span><span
-                                class="project-date">12 2025</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/251203_CITRA/SELECTION/1_CITRA_CARD.jpg">
-                    </div>
-                </div>
-
-                <div class="project image">
-                    <a href="project html/30_pharaoh.html">
-                        <div class="project-title"><span>Pharaoh</span><span class="project-medium">image</span><span
-                                class="project-date">12 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/251205_PHARAOH/SELECTION/1_PHARAOH_AI.png">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/29_vitrine.html">
-                        <div class="project-title"><span>Vitrine Gallery</span><span
-                                class="project-medium">graphic design</span><span class="project-date">11-2025</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/251103_VITRINE/EXHIBITION_DISPLAYS/5_VITRINE_VINYL.jpeg">
-                    </div>
-                </div>
-
-                <div class="project graphic-design image">
-                    <a href="project html/28_444.html">
-                        <div class="project-title"><span>Runner's High</span><span class="project-medium">graphic design | image</span><span
-                                class="project-date">11 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/251205_RUNNERS_HIGH/BOOK_RELEASE/444_04.jpg">
-                    </div>
-                </div>
-
-                <div class="project installations graphic-design">
-                    <a href="project html/27_airplace.html">
-                        <div class="project-title"><span>air place</span><span class="project-medium">installation | graphic design</span><span
-                                class="project-date">05 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250530_AIRPLACE/STILLS COMPRESSED/IMG_7394.png">
-                    </div>
-                </div>
-
-                <div class="project graphic-design image">
-                    <a href="project html/27_airplace.html">
-                        <div class="project-title"><span>Best Dutch Book Design Catalogue</span><span class="project-medium">graphic design | image</span><span
-                                class="project-date">05 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250525_CATALOGUE/COMPRESSED/CATALOGUE_VISUAL_EDIT.webp">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/26_ruth.html">
-                        <div class="project-title"><span>Ruth Gottstein, Women in Print</span><span
-                                class="project-medium">graphic design</span><span class="project-date">05 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250504_RUTH_GOTTSTEIN/COMPRESSED/R_PHOTOSHOOT_01.jpeg">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/24_sanctuary.html">
-                        <div class="project-title"><span>Sanctuary</span><span class="project-medium">graphic design</span><span
-                                class="project-date">04 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250411_SANCTUARY_QUESTIONNAIRE/SELECTION COMPRESSED/S_PHOTOSHOOT_08.png">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/24_sanctuary.html">
-                        <div class="project-title"><span>Exploded Typeface</span><span class="project-medium">graphic design</span><span
-                                class="project-date">04 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250410_EXPLOSION/SPECIMEN /explosion_3.webp">
-                    </div>
-                </div>
-
-                <div class="project image">
-                    <a href="project html/23_memory.html">
-                        <div class="project-title"><span>Muscle Memory</span><span
-                                class="project-medium">image</span><span class="project-date">03 2025</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250323_MUSCLE_MEMORY/COMPRESSED/bw-cig.webp">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/21_relic.html">
-                        <div class="project-title"><span>Dune Appendices</span><span
-                                class="project-medium">graphic design</span><span class="project-date">02 2025</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/2_DUNE_BOOK.webp">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/20_bus.html">
-                        <div class="project-title"><span>Shuttle Bus, Singapore Art Week</span><span
-                                class="project-medium">graphic design</span><span class="project-date">01 2025</span></div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/250119_SAW_BUS/PHOTO SELECTION/db7c3e04-4017-4040-a8ef-4fad16339a2c.JPG">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/17_stockman.html">
-                        <div class="project-title">
-                            <span>Stockman</span><span class="project-medium">graphic design</span><span
-                                class="project-date">12 2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/screencapture-olvexylem-github-io-the-curious-life-of-the-stockman-Rodeo-html-2026-07-28-14_16_47.png">
-                    </div>
-                </div>
-
-                <div class="project image">
-                    <a href="project html/21_relic.html">
-                        <div class="project-title"><span>Relic, Cyberpunk</span><span
-                                class="project-medium">image</span><span class="project-date">02 2025</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/241202_RELIC/STILLS/RELIC_FS_01.jpg">
-                    </div>
-                </div>
-
-                <!-- <div class="project graphic-design">
-                    <a href="">
-                        <div class="project-title">
-                            <span>Metamorphoses Exhibition Website</span><span class="project-medium">medium</span><span
-                                class="project-date">10-2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/241031_METAMORPHOSES_WEB/COMPRESSED/Screenshot 2025-12-24 at 10.00.57.png">
-                    </div>
-                </div> -->
-
-                <div class="project image installations">
-                    <a href="project html/16_ether.html">
-                        <div class="project-title">
-                            <span>Ether</span><span class="project-medium">image | installation</span><span
-                                class="project-date">10 2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/241015_ETHER/PHOTOGRAPY/2_ETHER_PHOTO.webp">
-                    </div>
-                </div>
-
-                <div class="project graphic-design image">
-                    <a href="">
-                        <div class="project-title">
-                            <span>Inuit Garment, Visual Exploration</span><span class="project-medium">graphic design | image</span><span
-                                class="project-date">06 2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/240526_INUIT_GARMENT/POSTER COMPRESSED/blck.1.png">
-                    </div>
-                </div>
-
-                <div class="project graphic-design image">
-                    <a href="project html/15_goodtime.html">
-                        <div class="project-title">
-                            <span>Good Time</span><span class="project-medium">graphic design | image</span><span
-                                class="project-date">05 2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/1_GT_SPREAD.webp">
-                    </div>
-                </div>
-
-                <div class="project graphic-design installations">
-                    <a href="project html/15_goodtime.html">
-                        <div class="project-title">
-                            <span>Utopian Presentation</span><span class="project-medium">graphic design | installation</span><span
-                                class="project-date">05 2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/240510_UTOPIA/DOCUMENTS/VIDEO STILLS/U_FS_02.jpg">
-                    </div>
-                </div>
-
-                <div class="project image">
-                    <a href="project html/12_future.html">
-                        <div class="project-title">
-                            <span>Future World</span><span class="project-medium">image</span><span
-                                class="project-date">04 2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/240405_FUTURE_WORLD/COMPRESSED/CANON IXUS/FW_02.jpeg">
-                    </div>
-                </div>
-
-                <div class="project image">
-                    <a href="project html/12_future.html">
-                        <div class="project-title">
-                            <span>Su Su Su Studio</span><span class="project-medium">image</span><span
-                                class="project-date">02 2024</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/240228_SUSUSUSTUDIO/RUBBISH_COMPOSITION/3_RUBBISH.webp">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/08_anna.html">
-                        <div class="project-title">
-                            <span>Anna Firth Interview, Transcript</span><span class="project-medium">graphic design</span><span
-                                class="project-date">11 2023</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/240119_ANNA/COMPRESSED/ANNA_PUBLICATION.jpeg">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/09_opium.html">
-                        <div class="project-title">
-                            <span>Opium War, Timeline</span><span class="project-medium">graphic design</span><span
-                                class="project-date">10 2023</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/231021_OPIUM_WAR/COMPRESSED/CROP_3.png">
-                    </div>
-                </div>
-
-                <div class="project graphic-design">
-                    <a href="project html/05_androids.html">
-                        <div class="project-title">
-                            <span>Do Androids Dream of Electric Sheep?</span><span
-                                class="project-medium">graphic design</span><span class="project-date">07 2023</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/230704_ANDROIDS/SELECTION/261024_DADES_THUMBNAILS.png">
-                    </div>
-                </div>
-
-                <div class="project image">
-                    <a href="project html/02_porcelain.html">
-                        <div class="project-title">
-                            <span>Porcelain Hallway</span><span class="project-medium">image</span><span
-                                class="project-date">08 2022</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/220808_PORCELAIN_HALLWAY/COMPRESSED/1_PORCELAIN.png">
-                    </div>
-                </div>
-
-                <div class="project installations">
-                    <a href="project html/01_acid.html">
-                        <div class="project-title">
-                            <span>Fish Helmet, GCSE</span><span class="project-medium">installation</span><span
-                                class="project-date">02 2021</span>
-                        </div>
-                    </a>
-                    <div class="project-cover">
-                        <img src="ARCHIVE/210201_FISH_HELMET/COMPRESSED/IMG_4818.png">
-                    </div>
-                </div>
-
-            </div>
         </div>
 
 
@@ -503,7 +190,7 @@
                     olivia2huynh@gmail.com<br>
                     <a href="https://www.instagram.com/olvehyh/"
                         target="_blank">instagram</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                        href="https://www.linkedin.com/in/olvehyh/ " target="_blank">linkedin</a>
+                        href="https://www.linkedin.com/in/olvehyh/" target="_blank">linkedin</a>
                 </div>
             </div>
 
@@ -511,7 +198,13 @@
 
     </div>
 
-    <script src="main.js"></script>
+    <script src="JS/projects.js"></script>
+    <script src="JS/clock.js"></script>
+    <script src="JS/carousel.js"></script>
+    <script src="JS/menu.js"></script>
+    <script src="JS/grid.js"></script>
+    <script src="JS/filter.js"></script>
+    <script src="JS/main.js"></script>
 </body>
 
 </html>

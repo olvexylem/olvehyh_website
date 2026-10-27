@@ -1,0 +1,68 @@
+/* HIGHLIGHT: pinned projects carousel */
+
+.high-cat {
+  position: relative;
+  margin-inline: var(--gutter);
+}
+
+.high-project-link {
+  position: absolute;
+  top: var(--gutter);
+  right: calc(var(--margin) * 2);
+  z-index: 20;
+  border-color: transparent;
+}
+
+/* Desktop click zones */
+
+.high-prev,
+.high-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 10;
+}
+
+.high-prev {
+  left: 0;
+  cursor: w-resize;
+}
+
+.high-next {
+  right: 0;
+  cursor: e-resize;
+}
+
+/* On touch devices swiping replaces the click zones */
+@media (hover: none) {
+  .high-prev,
+  .high-next {
+    display: none;
+  }
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.high-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.highlight img {
+  display: block;
+  width: auto;
+  height: 70%;
+  object-fit: cover;
+}
