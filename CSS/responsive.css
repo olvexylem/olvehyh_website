@@ -36,8 +36,21 @@
     white-space: nowrap;
   }
 
+  .menu-overlay {
+    padding-top: calc(var(--gutter) + var(--margin) * 3.5);    /* 3.5rem below the menu button's top */
+    padding-left: calc(var(--gutter) + var(--margin) * 3.5);   /* 3.5rem right of the menu button's edge */
+  }
+
   .timestamp {
     right: var(--gutter);
+  }
+
+  .copyright {
+    left: var(--gutter);   /* the menu button's left edge on phone */
+  }
+
+  .copyright-extra {
+    display: none;   /* phone shows only "©2026 Olivia Huynh" */
   }
 
   /* PAGE SYSTEM */
@@ -54,12 +67,7 @@
   }
 
   .high-project-link {
-    left: 0;
-    right: auto;
-    top: calc(100% - (var(--margin) * 5));
-    width: fit-content;
-    height: fit-content;
-    margin-left: var(--gutter);
+    right: calc(var(--gutter) - 8px);   /* the pill's 8px side padding, so the text edge sits at 3rem */
   }
 
   .highlight img {
@@ -112,5 +120,9 @@
 
   .desc-box {
     width: fit-content;
+  }
+
+  .info-cat {
+    padding-left: var(--gutter);   /* the menu button's left edge on phone */
   }
 }

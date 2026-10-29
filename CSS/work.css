@@ -1,6 +1,7 @@
 /* WORK: heading, filters, display icons, project grid */
 
 .work-cat {
+  position: relative;      /* hidden radios stay inside this page instead of floating off to the page's origin */
   margin-inline: var(--gutter);
   overflow-y: auto;
 }

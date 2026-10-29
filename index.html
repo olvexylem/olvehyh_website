@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script>try { if (sessionStorage.getItem("loaderSeen")) document.documentElement.classList.add("no-loader"); } catch (e) { }</script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -12,6 +14,63 @@
     <link rel="icon" href="black-square-favicon.png" />
 
     <title>Olivia Huynh</title>
+
+    <style>
+        .loader {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            /* above the menu (60) and everything else */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+
+        .loader.done {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .no-loader .loader {
+            display: none;
+        }
+
+        .loader-box {
+            /* the light grey square */
+            width: 48px;
+            height: 48px;
+            background: #e6e6e6;
+            overflow: hidden;
+        }
+
+        .loader-fill {
+            /* the black fill, growing left to right */
+            width: 100%;
+            height: 100%;
+            background: #000;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .loader,
+            .loader-fill {
+                transition: none;
+            }
+        }
+    </style>
+    <noscript>
+        <style>
+            .loader {
+                display: none;
+            }
+        </style>
+    </noscript>
 
     <!-- links for extensions and dependencies -->
 
@@ -26,26 +85,36 @@
 </head>
 
 <body>
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-box">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <script src="JS/loader.js"></script>
 
     <a class="home-btn" href="#high-cat">Olivia Huỳnh</a>
 
-    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
         <a class="menu-high-btn" href="#high-cat">pinned</a>
         <a class="menu-about-btn" href="#about-cat">about</a>
         <a class="menu-work-btn" href="#work-cat">work</a>
         <a class="menu-info-btn" href="#info-cat">info</a>
-        <div class="credits">
-            Development Olivia Huynh<br>
-            © 2026 Olivia Huynh<br>
-            All rights reserved.
-        </div>
     </div>
+
+    <button type="button" class="scroll-cue" aria-label="Next page">
+        <svg viewBox="0 0 12 12" aria-hidden="true">
+            <path d="M0.5 3.5 6 9l5.5-5.5" />
+        </svg>
+    </button>
 
     <div class="timestamp" id="timestamp"></div>
 
-<div class="interchange">
+    <div class="copyright">©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></div>
+
+    <div class="interchange">
 
         <div class="high-cat page" id="high-cat">
 
@@ -85,7 +154,8 @@
                         alt="Exploded typeface, sketch of the letter e" loading="lazy">
                 </div>
 
-                <div class="high-project" data-title="sanctuary ↗" data-url="PROJECTS/250411_SANCTUARY_QUESTIONNAIRE.html">
+                <div class="high-project" data-title="sanctuary ↗"
+                    data-url="PROJECTS/250411_SANCTUARY_QUESTIONNAIRE.html">
                     <img src="ARCHIVE/250411_SANCTUARY_QUESTIONNAIRE/SELECTION_COMPRESSED/S_PHOTOSHOOT_02.jpeg"
                         alt="Sanctuary questionnaire, photoshoot" loading="lazy">
                 </div>
@@ -192,6 +262,10 @@
                         target="_blank">instagram</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                         href="https://www.linkedin.com/in/olvehyh/" target="_blank">linkedin</a>
                 </div>
+
+                <div class="desc-container credit">
+                    Development Olivia Huynh
+                </div>
             </div>
 
         </div>
@@ -204,6 +278,8 @@
     <script src="JS/menu.js"></script>
     <script src="JS/grid.js"></script>
     <script src="JS/filter.js"></script>
+    <script src="JS/scroll-cue.js"></script>
+    <script src="JS/copyright.js"></script>
     <script src="JS/main.js"></script>
 </body>
 

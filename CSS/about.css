@@ -26,8 +26,8 @@
   display: flex;
   align-items: end;
   justify-content: flex-start;
-  padding-left: var(--content-left);
-  padding-bottom: var(--content-bottom);
+  padding-left: calc(var(--margin) * 2 + var(--gutter));   /* the menu button's left edge on laptop */
+  padding-bottom: calc(var(--margin) * 6); 
 }
 
 .desc-box {
@@ -41,4 +41,8 @@
 
 .desc-container a:hover {
   font-weight: 700;
+}
+
+.desc-container.credit {
+  margin-top: calc(var(--margin) * 2);   /* same gap as between the other sections */
 }

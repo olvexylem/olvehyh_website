@@ -28,3 +28,32 @@
 .highlight::-webkit-scrollbar {
   display: none;
 }
+
+/* SCROLL CUE: arrow fixed at the bottom centre of every page */
+
+.scroll-cue {
+  position: fixed;
+  bottom: calc(var(--margin) * 1.5);
+  left: 50%;
+  z-index: 20;
+  display: flex;
+  padding: 10px 14px;
+  transform: translateX(-50%);
+  color: #fff;
+  mix-blend-mode: difference;   /* white on images, black on white */
+}
+
+.scroll-cue svg {
+  display: block;
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+.scroll-cue.is-up svg {
+  transform: rotate(180deg);
+}

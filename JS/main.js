@@ -11,7 +11,9 @@ const startup = [
   renderProjects,   // must run before the view toggle and the filter, which need the cards
   initViewToggle,
   initFilter,
-  initFilterAlignment   // after the menu button exists, so it can be measured
+  initFilterAlignment,   // after the menu button exists, so it can be measured
+  initScrollCue,
+  initCopyright
 ];
 
 startup.forEach(step => {
