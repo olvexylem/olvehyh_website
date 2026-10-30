@@ -84,10 +84,10 @@
 
 .timestamp {
   position: absolute;
-  bottom: calc(var(--margin) * 1.5 + 16px);   /* the arrow's centre line */
-  right: calc(var(--margin) * 5);
+  bottom: var(--bottom-line, calc(var(--margin) * 1.5 + 16px));
+  left: calc(var(--margin) * 2 + var(--gutter));   /* the menu button's left edge */
   z-index: 50;
-  transform: translateY(50%);                  /* centres the text on that line, whatever its height */
+  transform: translateY(50%);
 }
 
 .copyright {

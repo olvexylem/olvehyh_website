@@ -26,6 +26,14 @@ function initScrollCue() {
 
   pages.forEach((page) => observer.observe(page));
 
+  // When the footer strip is on screen, fade the arrow and timestamp out so the copyright stands alone
+  const footer = document.querySelector(".site-footer");
+  if (footer) {
+    new IntersectionObserver(([entry]) => {
+      document.body.classList.toggle("footer-visible", entry.isIntersecting);
+    }, { root: container, threshold: 0.5 }).observe(footer);
+  }
+
   cue.addEventListener("click", () => {
     const target = pages[(current + 1) % pages.length];   // after the last page, back to the first
     const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;

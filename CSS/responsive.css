@@ -9,14 +9,50 @@
     --filter-indent: calc(var(--margin) * 5.15);
   }
 
+  /* HOME */
+
+  .home-btn.home-icon {
+    right: 0;
+    /* mirrors the menu button's 3rem on phone */
+    padding: 4px;
+    /* same as the phone menu button, so the circle is the same size */
+  }
+
+  .home-btn.home-icon .home-label {
+    display: none;
+  }
+
+  .home-dot {
+    display: block;
+    position: relative;
+    width: 9px;
+    /* the same 9px box the menu's plus is drawn in */
+    height: 9px;
+  }
+
+  .home-dot::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    margin: -1.5px 0 0 -1.5px;
+    /* centres the dot in the box */
+    border-radius: 50%;
+    background: currentColor;
+  }
+
   /* MENU */
 
   .menu-btn {
     left: 0;
-    padding: 4px;          /* a round button around the plus */
+    padding: 4px;
+    /* a round button around the plus */
   }
 
-  .menu-btn::after {       /* larger invisible tap area */
+  .menu-btn::after {
+    /* larger invisible tap area */
     content: "";
     position: absolute;
     inset: -10px;
@@ -26,7 +62,8 @@
     display: block;
   }
 
-  .menu-label {            /* the word is hidden, but screen readers still read it */
+  .menu-label {
+    /* the word is hidden, but screen readers still read it */
     position: absolute;
     width: 1px;
     height: 1px;
@@ -37,20 +74,24 @@
   }
 
   .menu-overlay {
-    padding-top: calc(var(--gutter) + var(--margin) * 3.5);    /* 3.5rem below the menu button's top */
-    padding-left: calc(var(--gutter) + var(--margin) * 3.5);   /* 3.5rem right of the menu button's edge */
+    padding-top: calc(var(--gutter) + var(--margin) * 3.5);
+    /* 3.5rem below the menu button's top */
+    padding-left: calc(var(--gutter) + var(--margin) * 3.5);
+    /* 3.5rem right of the menu button's edge */
   }
 
   .timestamp {
-    right: var(--gutter);
+    left: var(--gutter);
   }
 
   .copyright {
-    left: var(--gutter);   /* the menu button's left edge on phone */
+    left: var(--gutter);
+    /* the menu button's left edge on phone */
   }
 
   .copyright-extra {
-    display: none;   /* phone shows only "©2026 Olivia Huynh" */
+    display: none;
+    /* phone shows only "©2026 Olivia Huynh" */
   }
 
   /* PAGE SYSTEM */
@@ -67,7 +108,8 @@
   }
 
   .high-project-link {
-    right: calc(var(--gutter) - 8px);   /* the pill's 8px side padding, so the text edge sits at 3rem */
+    right: calc(var(--gutter) - 8px);
+    /* the pill's 8px side padding, so the text edge sits at 3rem */
   }
 
   .highlight img {
@@ -79,11 +121,13 @@
   .work-cat {
     height: calc(100vh - (var(--margin) * 2));
     height: calc(100dvh - (var(--margin) * 2));
-    margin-inline: calc(var(--margin) / 2);   /* half the side margin around the image grid */
+    margin-inline: calc(var(--margin) / 2);
+    /* half the side margin around the image grid */
   }
 
   .heading-grid {
-    padding-right: calc(var(--margin) / 2);   /* keeps the view toggle where it was */
+    padding-right: calc(var(--margin) / 2);
+    /* keeps the view toggle where it was */
   }
 
   .filter-menu.active {
@@ -92,24 +136,29 @@
 
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: calc(var(--margin) / 2);   /* half the space between images */
+    gap: calc(var(--margin) / 2);
+    /* half the space between images */
   }
 
   .project-grid.text-view {
-    gap: var(--margin);   /* the text list keeps its row spacing */
+    gap: var(--margin);
+    /* the text list keeps its row spacing */
   }
 
   .project-grid.text-view .project {
-    margin-inline: calc(var(--margin) * 2.5);   /* 2.5rem here + 0.5rem from the work area = 3rem from the screen on both sides */
+    margin-inline: calc(var(--margin) * 2.5);
+    /* 2.5rem here + 0.5rem from the work area = 3rem from the screen on both sides */
   }
 
   .project-grid.text-view .project::before {
-    display: none;   /* no hover arrow on phone */
+    display: none;
+    /* no hover arrow on phone */
   }
 
   .project-date,
   .project-grid.text-view .project-medium {
-    display: none;   /* phone text list: title only */
+    display: none;
+    /* phone text list: title only */
   }
 
   /* ABOUT */
@@ -123,6 +172,7 @@
   }
 
   .info-cat {
-    padding-left: var(--gutter);   /* the menu button's left edge on phone */
+    padding-left: var(--gutter);
+    /* the menu button's left edge on phone */
   }
 }
