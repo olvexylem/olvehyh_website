@@ -63,7 +63,6 @@
 .thumbnail-gallery {
     width: 100%;
     height: 100%;
-    scroll-snap-align: start;
     overflow: hidden;
     transition: width 0.4s ease;
 
@@ -81,6 +80,7 @@
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .thumbnail-box img {
@@ -89,6 +89,8 @@
     object-fit: contain;
     object-position: center;
     display: block;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .text-gallery-content::-webkit-scrollbar {
@@ -112,26 +114,30 @@
 }
 
 .text-gallery-content {
-    /* border: red 1px solid; */
-
     opacity: 0;
     transition: opacity 0.2s ease;
 
-    height: calc(100% - (var(--margin) * 4));
     width: 100%;
-    margin: calc(var(--margin) * 6);
+    height: calc(100% - (var(--gutter) * 2));
+    margin: var(--gutter);              /* 3rem from every edge, your page margin */
     overflow-y: scroll;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;     /* caption to the top, details to the bottom */
+    align-items: flex-start;            /* both on the left */
+    text-align: left;
+}
+
+.text-gallery-caption,
+.text-gallery-details {
+    margin: 0;                          /* paragraphs come with margins; the layout handles spacing now */
+    text-transform: initial;            /* normal capitals instead of uppercase */
+    letter-spacing: 0;
 }
 
 .text-gallery-caption {
-    margin-top: calc(var(--margin) * 2);
-    text-transform: initial;
+    text-transform: initial;            /* the caption keeps normal capitals, the details stay uppercase */
     letter-spacing: 0;
 }
 
@@ -184,12 +190,39 @@ iframe {
     inset: -10px;
 }
 
-/* COPYRIGHT: centred on project pages (the home page keeps it bottom left) */
+/* PAGE SCROLL: the project plus a footer strip revealed by scrolling once more */
 
-.project-page .copyright {
-    left: 50%;
-    transform: translate(-50%, 50%);
-    /* -50% centres it horizontally; the 50% keeps it level with the timestamp */
+.project-scroll {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+
+.project-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.project-main {
+    flex: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+.text-btn {
+    transition: opacity 0.4s ease;
+}
+
+.footer-visible .text-btn {
+    opacity: 0;
+    pointer-events: none;
 }
 
 
@@ -250,8 +283,7 @@ iframe {
 
     .text-gallery-content {
         height: calc(100% - (var(--margin) * 8));
-        margin: calc(var(--margin) * 4);
-        justify-content: start;
+        margin: calc(var(--margin) * 4) 0;   /* 4rem top and bottom, no side margin (see below) */
     }
 
     .overview.is-open .thumbnail-gallery {

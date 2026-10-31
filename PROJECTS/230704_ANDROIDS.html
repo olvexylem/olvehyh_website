@@ -5,72 +5,85 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description"
+        content="Do Androids Dream of Electric Sheep?, a 148-page publication made in The Hague in June 2023." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
     <title>Do Androids Dream of Electric Sheep?</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
         Do Androids Dream of Electric Sheep?
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <img src="../Archive/05_ANDROIDS/FINAL/DADES_01.webp" loading="lazy">
-                <img src="../Archive/05_ANDROIDS/FINAL/DADES_02.webp" loading="lazy">
-                <img src="../Archive/05_ANDROIDS/FINAL/DADES_03.webp" loading="lazy">
-                <img src="../Archive/05_ANDROIDS/FINAL/DADES_04.webp" loading="lazy">
-                <img src="../Archive/05_ANDROIDS/FINAL/DADES_05.webp" loading="lazy">
-                <img src="../Archive/05_ANDROIDS/FINAL/DADES_06.webp" loading="lazy">
-            </div>
-        </div>
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <img src="../ARCHIVE/230704_ANDROIDS/SELECTION/261024_DADES_THUMBNAILS.png"
+                            alt="Do Androids Dream of Electric Sheep?, publication, image 1 of 3">
+                        <img src="../ARCHIVE/230704_ANDROIDS/SELECTION/261024_DADES_THUMBNAILS5.png"
+                            alt="Do Androids Dream of Electric Sheep?, publication, image 2 of 3" loading="lazy">
+                        <img src="../ARCHIVE/230704_ANDROIDS/COVER_GRAPHICS/Sidney's-Catalogue-Back.png"
+                            alt="Do Androids Dream of Electric Sheep?, publication, image 3 of 3" loading="lazy">
+                    </div>
+                </div>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Publication<br>
-                148 pages | 200 × 290 mm | English<br>
-                The Hague, June 2023<br>
-                <div class="text-gallery-caption">
-                    A video project depicting a visual language about the human routine,
-                    highlighting a profound beauty to the common monotony that illustrates our lives.
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-caption">
+                            A video project depicting a visual language about the human routine,
+                            highlighting a profound beauty to the common monotony that illustrates our lives.
+                        </p>
+                        <p class="text-gallery-details">
+                            Publication<br>
+                            148 pages | 200 × 290 mm | English<br>
+                            The Hague, June 2023
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>

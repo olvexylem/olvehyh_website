@@ -126,7 +126,7 @@ input[type="radio"]:checked + label {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--margin);   /* space between the images, rows and columns */
+  gap: calc(var(--margin) / 2);   /* space between the images, rows and columns */
   padding-bottom: var(--content-bottom);   /* space after the last row when scrolled to the end */
 }
 

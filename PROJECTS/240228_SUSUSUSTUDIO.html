@@ -5,79 +5,99 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description" content="Su Su Su Studio, a photography project made in The Hague in May 2024." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
     <title>Su Su Su Studio</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
         Su Su Su Studio
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <img src="../Archive/14_SU/SU_01.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_02.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_03.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_04.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_05.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_06.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_07.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_08.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_09.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_10.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_11.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_12.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_13.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_14.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_15.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_16.webp" loading="lazy">
-                <img src="../Archive/14_SU/SU_17.webp" loading="lazy">
-            </div>
-        </div>
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/CRIME_SCENE/1_CRIMESCENE.webp" alt="Su Su Su Studio, photograph 1 of 13">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/FANTASY_PEAR/1_FANTASY_PEAR.webp" alt="Su Su Su Studio, photograph 2 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/MAKE_IT_WORSE/1_MAKE_IT_WORSE.webp" alt="Su Su Su Studio, photograph 3 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/MAKE_IT_WORSE/2_MAKE_IT_WORSE.webp" alt="Su Su Su Studio, photograph 4 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/PARK_BENCH/1_PARK_BENCH.webp" alt="Su Su Su Studio, photograph 5 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/PARK_BENCH/2_PARK_BENCH.webp" alt="Su Su Su Studio, photograph 6 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/RUBBISH_COMPOSITION/1_RUBBISH.webp" alt="Su Su Su Studio, photograph 7 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/RUBBISH_COMPOSITION/2_RUBBISH.webp" alt="Su Su Su Studio, photograph 8 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/RUBBISH_COMPOSITION/3_RUBBISH.webp" alt="Su Su Su Studio, photograph 9 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/SPRINGROLL/1_SPRINGROLL.webp" alt="Su Su Su Studio, photograph 10 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/STREET_LIFE/1_STREET.webp" alt="Su Su Su Studio, photograph 11 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/STREET_LIFE/2_STREET.webp" alt="Su Su Su Studio, photograph 12 of 13"
+                            loading="lazy">
+                        <img src="../ARCHIVE/240228_SUSUSUSTUDIO/STREET_LIFE/3_STREET.webp" alt="Su Su Su Studio, photograph 13 of 13"
+                            loading="lazy">
+                    </div>
+                </div>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Photography<br>
-                The Hague, May 2024<br>
-                Camera: Canon E0S<br>
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-details">
+                            Photography<br>
+                            The Hague, May 2024<br>
+                            Camera: Canon EOS
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>
