@@ -5,76 +5,94 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description"
+        content="The Curious Life of the Stockman, a series of three webzines about curiosity and adventure through the lens of the Australian stockman, made in The Hague in December 2024." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
     <title>The Curious Life of the Stockman</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
         The Curious Life of the Stockman
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_01.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_02.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_03.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_04.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_05.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_06.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_07.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_08.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_09.webp" loading="lazy">
-                <img src="../Archive/17_STOCKMAN/FINAL/CLOTS_W_10.webp" loading="lazy">
-            </div>
-        </div>
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <img src="../ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/screencapture-olvexylem-github-io-the-curious-life-of-the-stockman-Rodeo-html-2026-07-28-14_16_26.png"
+                            alt="The Curious Life of the Stockman, webzine, image 1 of 7">
+                        <img src="../ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/screencapture-olvexylem-github-io-the-curious-life-of-the-stockman-Rodeo-html-2026-07-28-14_16_47.png"
+                            alt="The Curious Life of the Stockman, webzine, image 2 of 7" loading="lazy">
+                        <img src="../ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/Screenshot 2026-07-28 at 14.20.25.png"
+                            alt="The Curious Life of the Stockman, webzine, image 3 of 7" loading="lazy">
+                        <img src="../ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/Screenshot 2026-07-28 at 14.21.39.png"
+                            alt="The Curious Life of the Stockman, webzine, image 4 of 7" loading="lazy">
+                        <img src="../ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/Screenshot 2026-07-28 at 14.22.36.png"
+                            alt="The Curious Life of the Stockman, webzine, image 5 of 7" loading="lazy">
+                        <img src="../ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/Screenshot 2026-07-28 at 14.25.29.png"
+                            alt="The Curious Life of the Stockman, webzine, image 6 of 7" loading="lazy">
+                        <img src="../ARCHIVE/241216_STOCKMAN/SCREEN CAPTURE/Screenshot 2026-07-28 at 14.26.56.png"
+                            alt="The Curious Life of the Stockman, webzine, image 7 of 7" loading="lazy">
+                    </div>
+                </div>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Webzine<br>
-                3.9 MB | English<br>
-                The Hague, December 2024<br>
-                <div class="text-gallery-caption">
-                    A series of three webzines about curiousity and adventure through the lens of the Australian
-                    stockman, in addition to being a personal tribute to the Aboriginal people and their culture.
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-caption">
+                            A series of three webzines about curiosity and adventure through the lens of the Australian
+                            stockman, in addition to being a personal tribute to the Aboriginal people and their
+                            culture.
+                        </p>
+                        <p class="text-gallery-details">
+                            Webzine<br>
+                            3.9 MB | English<br>
+                            The Hague, December 2024
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>

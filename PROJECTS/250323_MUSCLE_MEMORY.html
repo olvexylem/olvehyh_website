@@ -5,81 +5,90 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description"
+        content="Muscle Memory, an experimental short film, premiered on Home Cinema in the program If the Wind Is Still in March 2025." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
-    <title>Muscule Memory</title>
+    <title>Muscle Memory</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
-        Muscule Memory
+        Muscle Memory
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
+    <button type="button" class="bts-btn" aria-label="See behind the scenes">See BTS</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <iframe class="vimeo-video eighty-fifty-video"
-                    src="https://player.vimeo.com/video/1068665063?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                    width="1660" height="1080" frameborder="0"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                    title="Muscle Memory"></iframe>
-                <img src="../Archive/23_MEMORY/STILLS/MEMORY_01.webp" loading="lazy">
-                <img src="../Archive/23_MEMORY/STILLS/MEMORY_02.webp" loading="lazy">
-                <img src="../Archive/23_MEMORY/STILLS/MEMORY_03.webp" loading="lazy">
-                <img src="../Archive/23_MEMORY/STILLS/MEMORY_04.webp" loading="lazy">
-                <img src="../Archive/23_MEMORY/STILLS/MEMORY_05.webp" loading="lazy">
-                <img src="../Archive/23_MEMORY/STILLS/MEMORY_06.webp" loading="lazy">
-                <img src="../Archive/23_MEMORY/STILLS/MEMORY_07.webp" loading="lazy">
-            </div>
-        </div>
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <iframe
+                            src="https://player.vimeo.com/video/1068665063?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                            title="Muscle Memory, film"></iframe>
+                    </div>
+                </div>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Film · Photography<br>
-                3:50min | Genre: Experimental<br>
-                The Hague, March 2025<br>
-                <br>
-                Director: Olivia Huynh, Yin Englaan, Jaehyun Kim<br>
-                Camera: iPhone 14, Canon E0S<br>
-                <div class="text-gallery-caption">
-                    The melting recollection of crystallised memories from moments in time. A short film premeried on <a href="https://www.homecinema.video/" target="_blank">Home Cinema</a> in
-                    the program <i>If the Wind Is Still</i> on March 25th, 2025.
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-caption">
+                            The melting recollection of crystallised memories from moments in time. A short film
+                            premiered on
+                            <a href="https://www.homecinema.video/" target="_blank" rel="noopener noreferrer">Home
+                                Cinema</a> in
+                            the program <i>If the Wind Is Still</i> on March 25th, 2025.
+                        </p>
+                        <p class="text-gallery-details">
+                            Film · Photography<br>
+                            3:50min | Genre: Experimental<br>
+                            The Hague, March 2025<br>
+                            <br>
+                            Director: Olivia Huynh, Yin Englaan, Jaehyun Kim<br>
+                            Camera: iPhone 14, Canon EOS
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>

@@ -5,71 +5,89 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description"
+        content="Women in Print: Ruth Gottstein, a 44-page publication transcribing an interview with Ruth Gottstein, founder of Volcano Press, made in The Hague in 2025." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
     <title>Women in Print: Ruth Gottstein</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
         Women in Print: Ruth Gottstein
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <img src="../Archive/26_RUTH/FINAL/RUTH_01.webp" loading="lazy">
-                <img src="../Archive/26_RUTH/FINAL/RUTH_02.webp" loading="lazy">
-                <img src="../Archive/26_RUTH/FINAL/RUTH_03.webp" loading="lazy">
-                <img src="../Archive/26_RUTH/FINAL/RUTH_04.webp" loading="lazy">
-                <img src="../Archive/26_RUTH/FINAL/RUTH_05.webp" loading="lazy">
-            </div>
-        </div>
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <img src="../ARCHIVE/250504_RUTH_GOTTSTEIN/COMPRESSED/R_PHOTOSHOOT_01.jpeg"
+                            alt="Women in Print: Ruth Gottstein, publication, image 1 of 5">
+                        <img src="../ARCHIVE/250504_RUTH_GOTTSTEIN/COMPRESSED/R_PHOTOSHOOT_02.jpeg"
+                            alt="Women in Print: Ruth Gottstein, publication, image 2 of 5" loading="lazy">
+                        <img src="../ARCHIVE/250504_RUTH_GOTTSTEIN/COMPRESSED/R_PHOTOSHOOT_03.jpeg"
+                            alt="Women in Print: Ruth Gottstein, publication, image 3 of 5" loading="lazy">
+                        <img src="../ARCHIVE/250504_RUTH_GOTTSTEIN/COMPRESSED/R_PHOTOSHOOT_04.jpeg"
+                            alt="Women in Print: Ruth Gottstein, publication, image 4 of 5" loading="lazy">
+                        <img src="../ARCHIVE/250504_RUTH_GOTTSTEIN/COMPRESSED/R_PHOTOSHOOT_05.jpeg"
+                            alt="Women in Print: Ruth Gottstein, publication, image 5 of 5" loading="lazy">
+                    </div>
+                </div>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Graphic Design · Publication<br>
-                44 pages | 185 × 215 mm | English<br>
-                The Hague, 2025<br>
-                <div class="text-gallery-caption">
-                    A transcript of Suzanne Snider’s interview with Ruth Gottstein, founder of Volcano Press,
-                    recorded for the Oral History Project Voices from the Radical Feminist Press, 1980 to 1985.
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-caption">
+                            A transcript of Suzanne Snider’s interview with Ruth Gottstein, founder of Volcano Press,
+                            recorded for the Oral History Project Voices from the Radical Feminist Press, 1980 to 1985.
+                        </p>
+                        <p class="text-gallery-details">
+                            Graphic Design · Publication<br>
+                            44 pages | 185 × 215 mm | English<br>
+                            The Hague, 2025
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>

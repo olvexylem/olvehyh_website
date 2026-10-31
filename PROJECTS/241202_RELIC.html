@@ -5,87 +5,114 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description"
+        content="The Relic of the 21st Century, a cyberpunk short film set a thousand years in the future, screened at Eye Filmmuseum in Amsterdam in February 2025." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
     <title>The Relic of the 21st Century</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
         The Relic of the 21st Century
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
+    <button type="button" class="bts-btn" aria-label="See behind the scenes">See BTS</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <iframe class="vimeo-video sixteen-nine-video"
-                    src="https://player.vimeo.com/video/1055731008?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                    width="1920" height="1080" frameborder="0"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                    title="The Relic of the 21st Century"></iframe>
-                <img src="../Archive/21_RELIC/PROCESS/RELIC_SCREENING.jpeg" loading="lazy">
-                <img src="../Archive/21_RELIC/STILLS/RELIC_01.webp" loading="lazy">
-                <img src="../Archive/21_RELIC/STILLS/RELIC_02.webp" loading="lazy">
-                <img src="../Archive/21_RELIC/STILLS/RELIC_03.webp" loading="lazy">
-                <img src="../Archive/21_RELIC/STILLS/RELIC_05.webp" loading="lazy">
-                <img src="../Archive/21_RELIC/STILLS/RELIC_04.webp" loading="lazy">
-                <img src="../Archive/21_RELIC/PROCESS/RELIC_PROPS.webp" loading="lazy">
-                <img src="../Archive/21_RELIC/PROCESS/RELIC_STORYBOARD.jpeg" loading="lazy">
-            </div>
-        </div>
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <iframe
+                            src="https://player.vimeo.com/video/1055731008?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                            title="The Relic of the 21st Century, film"></iframe>
+                        <img src="../ARCHIVE/241202_RELIC/STILLS/RELIC_FS_01.jpg"
+                            alt="The Relic of the 21st Century, screening" loading="lazy">
+                        <img src="../ARCHIVE/241202_RELIC/STILLS/RELIC_FS_02.jpg"
+                            alt="The Relic of the 21st Century, still 1 of 5" loading="lazy">
+                        <img src="../ARCHIVE/241202_RELIC/STILLS/RELIC_FS_03.jpg"
+                            alt="The Relic of the 21st Century, still 2 of 5" loading="lazy">
+                        <img src="../ARCHIVE/241202_RELIC/STILLS/RELIC_FS_04.jpg"
+                            alt="The Relic of the 21st Century, still 3 of 5" loading="lazy">
+                    </div>
+                </div>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Film · Photography<br>
-                5:48min | Genre: Cyberpunk<br>
-                Amsterdam, February 2025<br>
-                <br>
-                Director: Olivia Huynh<br>
-                Actor: Jaehyun Kim<br>
-                Music: <i>Fade to Grey</i> Visage<br>
-                Camera: Canon E0S<br>
-                <div class="text-gallery-caption">
-                    Set a thousand years in the future, this short film follows a researcher who
-                    discovers a relic from the 21st century. This short film was featured as part of the <i>Cyberbreach</i> program at the <a
-                        href="https://www.eyefilm.nl/en" target="_blank">Eye
-                        Filmmuseum</a> in Amsterdam, which premiered
-                    on February 8th, 2025.
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-caption">
+                            Set a thousand years in the future, this short film follows a researcher who
+                            discovers a relic from the 21st century. This short film was featured as part of the
+                            <i>Cyberbreach</i> program at the <a href="https://www.eyefilm.nl/en" target="_blank"
+                                rel="noopener noreferrer">Eye Filmmuseum</a> in Amsterdam, which premiered
+                            on February 8th, 2025.
+                        </p>
+                        <p class="text-gallery-details">
+                            Film · Photography<br>
+                            5:48min | Genre: Cyberpunk<br>
+                            Amsterdam, February 2025<br>
+                            <br>
+                            Director: Olivia Huynh<br>
+                            Actor: Jaehyun Kim<br>
+                            Music: <i>Fade to Grey</i> Visage<br>
+                            Camera: Canon EOS
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <dialog class="bts-dialog" aria-label="Behind the scenes">
+        <button type="button" class="bts-close" aria-label="Close"></button>
+        <div class="bts-images">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/9a2498df-8153-462c-a6bc-f1e88dbfa37f.JPG" alt="" loading="lazy">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/IMG_1140.png" alt="" loading="lazy">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/IMG_1152.png" alt="" loading="lazy">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/IMG_1162.png" alt="" loading="lazy">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/IMG_1163 3.png" alt="" loading="lazy">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/IMG_1170 2.png" alt="" loading="lazy">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/IMG_1171.png" alt="" loading="lazy">
+            <img src="../ARCHIVE/241202_RELIC/BTS_COMPRESSED/IMG_1181.png" alt="" loading="lazy">
+        </div>
+    </dialog>
+
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>

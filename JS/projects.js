@@ -13,14 +13,14 @@ const projectData = [
     title: "Morbid Case Study",
     date: "2026-08",
     categories: ["image"],
-    url: "",
+    url: "PROJECTS/260808_MORBID.html",
     cover: "ARCHIVE/260808_MORBID/COMPRESSED/magnific_0epLDGNTfW.png"
   },
   {
     title: "Antwerpen Sightseeing",
     date: "2026-04",
     categories: ["image"],
-    url: "",
+    url: "PROJECTS/260400_ANTWERPEN.html",
     cover: "ARCHIVE/260400_ANTWERPEN/SELECTION/3_ANTWERPEN.png"
   },
 
@@ -52,7 +52,7 @@ const projectData = [
     date: "2025-11",
     categories: ["graphic-design"],
     url: "PROJECTS/251103_VITRINE.html",
-    cover: "ARCHIVE/251103_VITRINE/EXHIBITION_DISPLAYS/5_VITRINE_VINYL.jpeg"
+    cover: "ARCHIVE/251103_VITRINE/POSTER/1_VITRINE_POSTER.webp"
   },
   {
     title: "Runner's High",
@@ -66,7 +66,7 @@ const projectData = [
     date: "2025-05",
     categories: ["installations", "graphic-design"],
     url: "PROJECTS/250530_AIRPLACE.html",
-    cover: "ARCHIVE/250530_AIRPLACE/STILLS_COMPRESSED/IMG_7394.png"
+    cover: "ARCHIVE/250530_AIRPLACE/STILLS_COMPRESSED/IMG_7493.png"
   },
   {
     title: "Best Dutch Book Design Catalogue",
@@ -211,11 +211,11 @@ const projectData = [
     url: "PROJECTS/220808_PORCELAIN_HALLWAY.html",
     cover: "ARCHIVE/220808_PORCELAIN_HALLWAY/COMPRESSED/1_PORCELAIN.png"
   },
-  {
-    title: "Fish Helmet, GCSE",
-    date: "2021-02",
-    categories: ["installations"],
-    url: "",
-    cover: "ARCHIVE/210201_FISH_HELMET/COMPRESSED/IMG_4818.png"
-  }
+  // {
+  //   title: "Fish Helmet, GCSE",
+  //   date: "2021-02",
+  //   categories: ["installations"],
+  //   url: "",
+  //   cover: "ARCHIVE/210201_FISH_HELMET/COMPRESSED/IMG_4818.png"
+  // }
 ];

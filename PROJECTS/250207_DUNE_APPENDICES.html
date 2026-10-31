@@ -5,71 +5,124 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description" content="Appendices of Dune, a 75-page publication, made in The Hague." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
     <title>Appendices of Dune</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
         Appendices of Dune
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_01.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_02.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_03.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_04.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_05.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_06.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_07.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_08.webp" loading="lazy">
-                <img src="../Archive/18_DUNE/FINAL/DUNE_09.webp" loading="lazy">
-            </div>
-        </div>
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/1_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 1 of 9">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/2_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 2 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/3_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 3 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/4_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 4 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/5_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 5 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/6_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 6 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/7_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 7 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/8_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 8 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/IPHONE_PHOTOS/9_DUNE_BOOK.webp"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/1_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/2_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/3_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/4_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/5_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/6_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/7_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/8_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/9_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/10_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/11_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/12_DUNE_SCAN.png"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/13_DUNE_SCAN.jpeg"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/14_DUNE_SCAN.jpeg"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/15_DUNE_SCAN.jpeg"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                        <img src="../ARCHIVE/250207_DUNE_APPENDICES/SCANS_COMPRESSED/16_DUNE_SCAN.jpeg"
+                            alt="Appendices of Dune, publication, image 9 of 9" loading="lazy">
+                    </div>
+                </div>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Graphic Design · Publication<br>
-                75 pages | 110 × 190 mm | English<br>
-                The Hague, December 2024
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-details">
+                            Graphic Design · Publication<br>
+                            75 pages | 110 × 190 mm | English<br>
+                            The Hague, December 2024
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>

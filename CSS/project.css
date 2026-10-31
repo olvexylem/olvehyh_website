@@ -40,7 +40,8 @@
     bottom: calc(var(--margin) * 1.5 + 16px);
     /* the same line as the timestamp and the copyright */
     left: auto;
-    right: calc(var(--margin) * 2 + var(--gutter));   /* mirrors the home button's 5rem edge */
+    right: calc(var(--margin) * 2 + var(--gutter));
+    /* mirrors the home button's 5rem edge */
     margin: 0;
     transform: translateY(50%);
     /* centres the text on that line */
@@ -119,25 +120,38 @@
 
     width: 100%;
     height: calc(100% - (var(--gutter) * 2));
-    margin: var(--gutter);              /* 3rem from every edge, your page margin */
+    margin: calc(var(--gutter) * 1.5);
     overflow-y: scroll;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;     /* caption to the top, details to the bottom */
-    align-items: flex-start;            /* both on the left */
+    justify-content: space-between;
+    /* caption to the top, details to the bottom */
+    align-items: flex-start;
+    /* both on the left */
     text-align: left;
 }
 
 .text-gallery-caption,
 .text-gallery-details {
-    margin: 0;                          /* paragraphs come with margins; the layout handles spacing now */
-    text-transform: initial;            /* normal capitals instead of uppercase */
+    margin: 0;
+    /* paragraphs come with margins; the layout handles spacing now */
+    text-transform: initial;
+    /* normal capitals instead of uppercase */
     letter-spacing: 0;
 }
 
+.text-gallery-details{
+    align-self: stretch;                       /* full width of the panel, not just as wide as the text */
+    padding-top: var(--margin);                /* space between the line and the text */
+    border-top: 1px solid var(--text);         /* the divider */
+}
+
 .text-gallery-caption {
-    text-transform: initial;            /* the caption keeps normal capitals, the details stay uppercase */
+    font-size: calc(var(--font-size) * 1.5);
+    /* double: 16pt on laptop, 14pt on iPhone */
+    text-transform: initial;
+    /* the caption keeps normal capitals, the details stay uppercase */
     letter-spacing: 0;
 }
 
@@ -157,9 +171,13 @@
 
 /* VIDEO */
 
-iframe {
+.thumbnail-box iframe {
+    display: block;            /* iframes are inline by default, which leaves a gap and can break the height */
     width: 100%;
-    height: 100%;
+    height: 100%;              /* the same height as the gallery box, like the images */
+    border: 0;                 /* removes the grey frame the browser adds */
+    scroll-snap-align: start;  /* makes the video a snap point, so you can scroll back up to it */
+    scroll-snap-stop: always;
 }
 
 /* HOME BUTTON: laptop = outlined word like Menu, phone = house icon (see responsive.css) */
@@ -225,6 +243,95 @@ iframe {
     pointer-events: none;
 }
 
+/* BEHIND THE SCENES: button and pop-up */
+
+.bts-btn {
+    position: fixed;
+    left: 50%;
+    bottom: calc(var(--margin) * 1.5 + 16px);          /* the same line as the timestamp and Read More */
+    transform: translate(-50%, 50%);
+    text-transform: uppercase;
+    font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height);
+    transition: opacity 0.4s ease;
+}
+
+.footer-visible .bts-btn {                             /* fades out with the timestamp when the copyright strip shows */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.bts-dialog {
+    width: 56vw;
+    height: calc(100dvh - (var(--margin) * 4));
+    max-width: none;
+    max-height: none;
+    padding: 0;
+    border: 0;                            /* no outline */
+    background: transparent;              /* no white card: the images and the x float directly on the page */
+    color: inherit;
+}
+
+.bts-dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.bts-dialog::backdrop {
+    background: rgba(255, 255, 255);   /* a light wash so the black x stays readable */
+}
+
+.bts-close {
+    flex: none;
+    align-self: center;                                 /* top centre */
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+}
+
+.bts-close::before,
+.bts-close::after {                                     /* a bare x, with no circle */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 11px;
+    height: 1px;
+    background: currentColor;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.bts-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.bts-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+    padding: 0 var(--margin) var(--margin);
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;        /* one image at a time */
+    scrollbar-width: none;
+}
+
+.bts-images::-webkit-scrollbar {
+    display: none;
+}
+
+.bts-images img {
+    flex: none;                           /* never squashed to fit */
+    display: block;
+    width: 100%;
+    height: 100%;                         /* as tall as the visible scroll area, so one image fills the card */
+    object-fit: contain;                  /* the whole image is visible, never cropped */
+    object-position: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;             /* a fast scroll can't skip an image */
+}
+
 
 /* MOBILE: only what changes */
 
@@ -283,7 +390,8 @@ iframe {
 
     .text-gallery-content {
         height: calc(100% - (var(--margin) * 8));
-        margin: calc(var(--margin) * 4) 0;   /* 4rem top and bottom, no side margin (see below) */
+        margin: calc(var(--margin) * 4) 0;
+        /* 4rem top and bottom, no side margin (see below) */
     }
 
     .overview.is-open .thumbnail-gallery {
@@ -296,4 +404,13 @@ iframe {
         height: 50%;
         transition-delay: 0s;
     }
+
+    .text-gallery-caption {
+        font-size: calc(var(--font-size) * 1.5);
+    }
+
+    .bts-dialog {
+        width: calc(100vw - (var(--margin) * 2));
+    }
 }
+

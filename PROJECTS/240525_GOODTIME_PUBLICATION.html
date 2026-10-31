@@ -5,89 +5,142 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- meta tags, fill them with website meta infos -->
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description"
+        content="Good Time, a 40-page publication of original paintings inspired by the 2017 film, made in The Hague in June 2024." />
     <meta name="programmer" content="Olivia Huynh" />
 
-    <link rel="icon" href="" />
+    <link rel="icon" href="../black-square-favicon.png" />
 
     <title>Good Time</title>
 
-    <!-- links for extensions and dependencies -->
-
-    <!-- css normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- you stylesheet -->
-    <link rel="stylesheet" href="../css/main.css?ver=1.0">
-    <link rel="stylesheet" href="../css/project.css?ver=1.0">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
 </head>
 
-<body>
-
-    <a class="home-btn" href="../index.html#work-cat">Olivia Huynh&nbsp;&nbsp;<span
-            style="font-family: var(--font-book);">|</span>&nbsp;&nbsp;Designer
+<body class="project-page">
+    <a class="home-btn home-icon" href="../index.html" aria-label="Home">
+        <span class="home-label">home</span>
+        <span class="home-dot" aria-hidden="true"></span>
     </a>
 
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn"><span class="menu-label">Menu</span><span class="menu-icon"
+            aria-hidden="true"></span></button>
 
     <div class="menu-overlay hidden">
-        <!-- <a class="menu-home-btn" href="#home-cat">home</a> -->
+        <a class="menu-high-btn" href="../index.html#high-cat">pinned</a>
+        <a class="menu-about-btn" href="../index.html#about-cat">about</a>
         <a class="menu-work-btn" href="../index.html#work-cat">work</a>
-        <a class="menu-about-btn" href="../index.html#info-cat">info</a>
+        <a class="menu-info-btn" href="../index.html#info-cat">info</a>
     </div>
 
-    <!-- <div class="copyrights-btn">© 2026 Olivia Huynh.<br> All Rights Reserved.</div> -->
+    <div class="timestamp" id="timestamp"></div>
 
     <div class="thumbnail-title">
         Good Time
     </div>
 
-    <div class="text-btn">[ read more ]</div>
+    <button type="button" class="text-btn">Read More</button>
 
-    <div class="overview">
-        <div class="thumbnail-gallery">
-            <div class="thumbnail-box">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_01.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_02.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_03.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_04.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_05.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_06.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_07.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_08.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_09.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_10.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_11.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_12.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_13.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_14.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_15.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_16.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_17.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_18.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_19.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_20.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/FINAL/GOOD_21.webp" loading="lazy">
-                <img src="../Archive/15_GOODTIME/PROCESS/GOOD_P_01.webp" loading="lazy">
-            </div>
-        </div>
+    <button type="button" class="bts-btn" aria-label="See behind the scenes">See BTS</button>
 
-        <div class="text-gallery">
-            <div class="text-gallery-content">
-                Graphic Design · Publication · Spray Painting<br>
-                40 pages | - × - mm | English<br>
-                The Hague, June 2024<br>
-                <div class="text-gallery-caption">
-                    A publication inspired by the 2017 thriller Good Time, directed by Benny and Josh Safdie,
-                    showcasing a series of original paintings created by Olivia Huynh while listening to
-                    Oneohtrix Point Never's soundtrack for the film.
+    <div class="project-scroll">
+        <main class="project-main">
+            <div class="overview">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail-box">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/1_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 1 of 22">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/3_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 2 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/4_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 3 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/5_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 4 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/6_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 5 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/7_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 6 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/8_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 7 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/9_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 8 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/10_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 9 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/11_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 10 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/12_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 11 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/13_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 12 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/14_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 13 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/15_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 14 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/16_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 15 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/17_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 16 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/18_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 17 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/19_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 18 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/20_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 19 of 22" loading="lazy">
+                        <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/SPREADS/21_GT_SPREAD.webp"
+                            alt="Good Time, publication, image 20 of 22" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="text-gallery">
+                    <div class="text-gallery-content">
+                        <p class="text-gallery-caption">
+                            A publication inspired by the 2017 thriller Good Time, directed by Benny and Josh Safdie,
+                            showcasing a series of original paintings created by Olivia Huynh while listening to
+                            Oneohtrix Point Never's soundtrack for the film.
+                        </p>
+                        <p class="text-gallery-details">
+                            Graphic Design · Publication · Spray Painting<br>
+                            40 pages | - × - mm | English<br>
+                            The Hague, June 2024
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+
+        <footer class="site-footer">
+            <span>©2026 Olivia Huynh<span class="copyright-extra">. All Rights Reserved.</span></span>
+        </footer>
+
+        <dialog class="bts-dialog" aria-label="Behind the scenes">
+            <button type="button" class="bts-close" aria-label="Close"></button>
+            <div class="bts-images">
+                <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/BTS_COMPRESSED/B2C410E8-8E1E-481A-BC93-F4037BCC0AFA.png" alt="Describe image 1"
+                    loading="lazy">
+                <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/BTS_COMPRESSED/IMG_6003.png" alt="Describe image 2"
+                    loading="lazy">
+                <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/BTS_COMPRESSED/IMG_6167.png" alt="Describe image 2"
+                    loading="lazy">
+                <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/BTS_COMPRESSED/IMG_6185.png" alt="Describe image 2"
+                    loading="lazy">
+                <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/BTS_COMPRESSED/IMG_6186.png" alt="Describe image 2"
+                    loading="lazy">
+                <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/BTS_COMPRESSED/IMG_6199.png" alt="Describe image 2"
+                    loading="lazy">
+                <img src="../ARCHIVE/240525_GOODTIME_PUBLICATION/BTS_COMPRESSED/IMG_6215.png" alt="Describe image 2"
+                    loading="lazy">
+            </div>
+        </dialog>
     </div>
 
-    <script src="../main.js"></script>
-    <script src="../project.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/clock.js"></script>
+    <script src="../JS/copyright.js"></script>
+    <script src="../JS/project.js"></script>
+    <script>initMenu(); initClock(); initCopyright();</script>
 </body>
 
 </html>
