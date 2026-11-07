@@ -16,14 +16,6 @@ const projectData = [
     url: "PROJECTS/260808_MORBID.html",
     cover: "ARCHIVE/260808_MORBID/COMPRESSED/magnific_0epLDGNTfW.png"
   },
-  {
-    title: "Antwerpen Sightseeing",
-    date: "2026-04",
-    categories: ["image"],
-    url: "PROJECTS/260400_ANTWERPEN.html",
-    cover: "ARCHIVE/260400_ANTWERPEN/SELECTION/3_ANTWERPEN.png"
-  },
-
   // Hidden for now (was commented out in the HTML)
   // {
   //   title: "Synthetic Transcendence",
@@ -32,7 +24,13 @@ const projectData = [
   //   url: "",
   //   cover: "ARCHIVE/34_SYTHENTIC/test_01.JPG"
   // },
-
+  {
+    title: "Antwerpen Sightseeing",
+    date: "2026-04",
+    categories: ["image"],
+    url: "PROJECTS/260400_ANTWERPEN.html",
+    cover: "ARCHIVE/260400_ANTWERPEN/SELECTION/3_ANTWERPEN.png"
+  },
   {
     title: "Citra",
     date: "2025-12",
@@ -210,12 +208,5 @@ const projectData = [
     categories: ["image"],
     url: "PROJECTS/220808_PORCELAIN_HALLWAY.html",
     cover: "ARCHIVE/220808_PORCELAIN_HALLWAY/COMPRESSED/1_PORCELAIN.png"
-  },
-  // {
-  //   title: "Fish Helmet, GCSE",
-  //   date: "2021-02",
-  //   categories: ["installations"],
-  //   url: "",
-  //   cover: "ARCHIVE/210201_FISH_HELMET/COMPRESSED/IMG_4818.png"
-  // }
+  }
 ];
