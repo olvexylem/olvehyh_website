@@ -60,7 +60,7 @@
 
 .thumbnail-box {
     width: 100%;
-    height: 100%;
+    height: var(--gallery-h, 100%); 
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
@@ -76,7 +76,32 @@
 }
 
 .overview.is-moving .thumbnail-box {
-    scroll-snap-type: none;        /* no re-snapping while the gallery resizes */
+    scroll-snap-type: none;
+    /* no re-snapping while the gallery resizes */
+}
+
+.thumbnail-slide {
+    height: 100%;
+    /* one full screen of the gallery, like an image */
+    box-sizing: border-box;
+    padding: var(--margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    /* the same snapping as the images */
+    scroll-snap-stop: always;
+
+    text-align: center;
+    text-transform: initial;
+    /* normal capitals, like the caption */
+    letter-spacing: 0;
+    font-size: calc(var(--font-size));
+}
+
+.thumbnail-slide p {
+    max-width: 60ch;
+    margin: 0;
 }
 
 /* THUMBNAIL + TEXT: caption above, gallery in the middle, details below */
@@ -85,21 +110,32 @@
     width: calc(100% - (var(--margin) * 10));
     height: 70%;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    /* one full-width column */
     --details-h: 0px;
-    grid-template-rows: 0px 1fr 0fr;
-    transition: grid-template-rows 0.4s ease 0.2s;   /* closing: waits for the text to fade out */
+    --count-full: calc(var(--margin) * 3);              /* the counter's normal gap (was --count-h) */
+    --count-h: var(--count-full);
+    --lift: 0;                                           /* 0 = normal, 1 = caption fully risen; set by JS */
+    --btn-h: calc(var(--margin) * 2.5); 
+    --count-closed: calc(var(--margin) * 4); 
+    grid-template-rows: 0px 1fr 0fr 0px; 
+    transition: grid-template-rows 0.4s ease 0.2s;
+    margin-top: var(--count-closed); 
 }
 
 .overview.is-open {
-    grid-template-rows: var(--details-h) 6fr 1.6fr;    /* was 1fr: the caption row is now about 50% taller */
+    grid-template-rows: var(--details-h) 6fr 1.6fr var(--btn-h);
 }
 
 .thumbnail-gallery {
     grid-row: 2;
+    grid-column: 1;
     min-height: 0;
     overflow: hidden;
-    box-shadow: 0 -1px 0 transparent;                  /* closed: invisible */
-    transition: box-shadow 0.2s ease;                  /* closing: fades out straight away */
+    box-shadow: 0 -1px 0 transparent;
+    /* closed: invisible */
+    transition: box-shadow 0.2s ease;
+    /* closing: fades out straight away */
 
     font-size: var(--font-size);
     text-transform: uppercase;
@@ -108,8 +144,10 @@
 }
 
 .overview.is-open .thumbnail-gallery {
-    box-shadow: 0 -1px 0 var(--text);                  /* open: the line */
-    transition-delay: 0.4s;                            /* fades in with the text */
+    box-shadow: 0 -1px 0 var(--text);
+    /* open: the line */
+    transition-delay: 0.4s;
+    /* fades in with the text */
 }
 
 /* the two wrappers disappear, so caption and details become grid items */
@@ -119,18 +157,21 @@
 }
 
 .text-gallery-caption,
-.text-gallery-details {                          
+.text-gallery-details {
+    grid-column: 1;
+    width: 100%;
     max-width: 60ch;
     min-height: 0;
-    margin: 0;
-    margin-inline: auto;
+    margin: 0 auto;
+    /* centred; no top or bottom margin */
     padding: 0;
-    overflow-y: auto;                          /* each scrolls on its own */
+    overflow-y: auto;
+    /* each scrolls on its own */
     scrollbar-width: none;
-    text-align: center; 
+    text-align: center;
     text-transform: initial;
     letter-spacing: 0;
-    font-size: var(--font-size);             
+    font-size: var(--font-size);
     line-height: var(--line-height);
 
     opacity: 0;
@@ -144,19 +185,13 @@
 
 .text-gallery-caption {
     grid-row: 3;
-    width: 100%;
-    max-width: 60ch;
-    margin-inline: auto;
-    transition: opacity 0.2s ease, margin-top 0.4s ease 0.2s;
+    transition: opacity 0.2s ease, margin-top 0.4s ease 0.2s, min-height 0.4s ease 0.2s;
 }
 
 .text-gallery-details {
     grid-row: 1;
     align-self: end;
-    width: 100%;
-    max-width: 60ch;
-    margin-inline: auto;
-    padding-bottom: calc(var(--margin) * 2);
+    padding-bottom: calc(var(--margin) * 1.5);
     pointer-events: none;
 }
 
@@ -165,23 +200,12 @@
     mask-image: linear-gradient(to bottom, #000 calc(100% - 2.5em), transparent 100%);
 }
 
-/* spacing and the divider only exist when open, so the closed rows are truly 0 */
+/* open state: spacing and visibility only exist now, so the closed rows are truly 0 */
 .overview.is-open .text-gallery-caption {
-    padding-top: 0;
-    margin-top: calc(var(--margin) * 2);
-}
-
-.overview.is-open .text-gallery-details {
-    padding-bottom: calc(var(--margin) * 2);
-    margin-bottom: 0;
-    border-bottom: 1px solid var(--text);
-}
-
-.overview.is-open .text-gallery-caption {
-    padding-top: 0;
-    margin-top: calc(var(--margin) * 2);
+    margin-top: calc(var(--count-h) + (var(--margin) * 1.5));
+    min-height: 4lh;                                    /* three lines of the caption's own line height */
     opacity: 1;
-    transition-delay: 0.4s, 0s;                      /* opacity waits, margin doesn't */
+    transition-delay: 0.4s, 0s, 0s;                     /* opacity waits; margin and min-height don't */
 }
 
 .overview.is-open .text-gallery-details {
@@ -190,14 +214,107 @@
     transition-delay: 0.4s;
 }
 
+/* IMAGE COUNT: "1/10" in the gap between the gallery and the caption */
+
+.image-count {
+    grid-row: 3;
+    grid-column: 1;                               /* the same cell as the caption */
+    align-self: start;
+    height: var(--count-closed);                  /* closed: just the number, under the gallery */
+    min-height: var(--count-closed);              /* holds the closed row open for it */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-variant-numeric: tabular-nums;           /* digits stay the same width as they change */
+    pointer-events: none;
+
+    box-shadow: inset 0 -1px 0 transparent;       /* the line only exists when open */
+    transition: height 0.4s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overview.is-open .image-count {
+    height: var(--count-h);                       /* open: the full gap above the caption */
+    box-shadow: inset 0 -1px 0 var(--text);
+    transition-delay: 0s, 0.4s, 0.4s;             /* the height moves with the row; the line fades in after */
+}
+
+/* READING: the caption and its line rise over the gallery */
+
+.overview.is-reading {
+    --count-h: calc(var(--count-full) * (1 - var(--lift)) + var(--lift) * 1px);   /* the counter's gap closes down to its 1px line */
+    grid-template-rows: var(--details-h) calc(var(--gallery-h) * (1 - var(--lift))) 1fr var(--btn-h);
+    transition: none;                                   /* JS animates --lift frame by frame */
+}
+
+.overview.is-reading .thumbnail-gallery {
+    box-shadow: 0 -1px 0 color-mix(in srgb, var(--text) calc((1 - var(--lift)) * 100%), transparent);
+}
+
+.overview.is-reading .image-count {
+    color: transparent;
+    transition: color 0.15s ease;                       /* was: opacity 0.2s ease, color 0.15s ease */
+}
+
+.overview.is-reading .text-gallery-caption {
+    transition: opacity 0.2s ease;
+}
+
+/* EXPAND BUTTON: a stemless chevron under the caption */
+
+.expand-btn {
+    grid-row: 4;                                        /* its own row under the caption */
+    grid-column: 1;
+    justify-self: center;
+    width: 3rem;                                        /* a generous tap area; the drawing stays 14px */
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* visible when open and there is more text to read, or while expanded */
+.overview.is-open:has(.text-gallery-caption.has-more) .expand-btn,
+.overview.is-open.is-reading .expand-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.4s;
+}
+
+.expand-btn svg {
+    width: 9px;                                         /* was 14px: the same width as the Menu plus */
+    height: 5px;                                        /* was 8px: keeps the same proportions */
+    transition: transform 0.4s ease;
+}
+
+.overview.is-expanded .expand-btn svg {
+    transform: rotate(180deg);                          /* points down when expanded */
+}
+
 /* VIDEO */
 
 .thumbnail-box iframe {
-    display: block;            /* iframes are inline by default, which leaves a gap and can break the height */
+    display: block;
+    /* iframes are inline by default, which leaves a gap and can break the height */
     width: 100%;
-    height: 100%;              /* the same height as the gallery box, like the images */
-    border: 0;                 /* removes the grey frame the browser adds */
-    scroll-snap-align: start;  /* makes the video a snap point, so you can scroll back up to it */
+    height: 100%;
+    /* the same height as the gallery box, like the images */
+    border: 0;
+    /* removes the grey frame the browser adds */
+    scroll-snap-align: start;
+    /* makes the video a snap point, so you can scroll back up to it */
     scroll-snap-stop: always;
 }
 
@@ -269,7 +386,8 @@
 .bts-btn {
     position: fixed;
     left: 50%;
-    bottom: calc(var(--margin) * 1.5 + 16px);          /* the same line as the timestamp and Read More */
+    bottom: calc(var(--margin) * 1.5 + 16px);
+    /* the same line as the timestamp and Read More */
     transform: translate(-50%, 50%);
     text-transform: uppercase;
     font-size: var(--font-size);
@@ -278,7 +396,8 @@
     transition: opacity 0.4s ease;
 }
 
-.footer-visible .bts-btn {                             /* fades out with the timestamp when the copyright strip shows */
+.footer-visible .bts-btn {
+    /* fades out with the timestamp when the copyright strip shows */
     opacity: 0;
     pointer-events: none;
 }
@@ -289,8 +408,10 @@
     max-width: none;
     max-height: none;
     padding: 0;
-    border: 0;                            /* no outline */
-    background: transparent;              /* no white card: the images and the x float directly on the page */
+    border: 0;
+    /* no outline */
+    background: transparent;
+    /* no white card: the images and the x float directly on the page */
     color: inherit;
 }
 
@@ -300,19 +421,22 @@
 }
 
 .bts-dialog::backdrop {
-    background: rgba(255, 255, 255);   /* a light wash so the black x stays readable */
+    background: rgba(255, 255, 255);
+    /* a light wash so the black x stays readable */
 }
 
 .bts-close {
     flex: none;
-    align-self: center;                                 /* top centre */
+    align-self: center;
+    /* top centre */
     position: relative;
     width: 3rem;
     height: 3rem;
 }
 
 .bts-close::before,
-.bts-close::after {                                     /* a bare x, with no circle */
+.bts-close::after {
+    /* a bare x, with no circle */
     content: "";
     position: absolute;
     top: 50%;
@@ -334,7 +458,8 @@
     gap: var(--margin);
     padding: 0 var(--margin) var(--margin);
     overflow-y: auto;
-    scroll-snap-type: y mandatory;        /* one image at a time */
+    scroll-snap-type: y mandatory;
+    /* one image at a time */
     scrollbar-width: none;
 }
 
@@ -343,14 +468,18 @@
 }
 
 .bts-images img {
-    flex: none;                           /* never squashed to fit */
+    flex: none;
+    /* never squashed to fit */
     display: block;
     width: 100%;
-    height: 100%;                         /* as tall as the visible scroll area, so one image fills the card */
-    object-fit: contain;                  /* the whole image is visible, never cropped */
+    height: 100%;
+    /* as tall as the visible scroll area, so one image fills the card */
+    object-fit: contain;
+    /* the whole image is visible, never cropped */
     object-position: center;
     scroll-snap-align: start;
-    scroll-snap-stop: always;             /* a fast scroll can't skip an image */
+    scroll-snap-stop: always;
+    /* a fast scroll can't skip an image */
 }
 
 
@@ -400,4 +529,3 @@
         width: calc(100vw - (var(--margin) * 2));
     }
 }
-
