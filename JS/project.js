@@ -171,13 +171,16 @@ function initImageCount() {
   if (!box || !overview) return;
 
   const total = box.children.length;      // every image and video in the gallery
-  if (total < 2) return;                  // no counter for a single image
 
   const label = document.createElement("div");
   label.className = "image-count";
   label.setAttribute("aria-hidden", "true");   // screen readers don't need it; the images have alt text
   overview.appendChild(label);
-  overview.classList.add("has-count");
+
+  if (total < 2) {                        // one slide: no number, but the line under it stays
+    overview.classList.add("is-single");
+    return;
+  }
 
   const update = () => {
     const current = Math.min(total, Math.round(box.scrollTop / box.clientHeight) + 1);

@@ -118,6 +118,7 @@
     --lift: 0;                                           /* 0 = normal, 1 = caption fully risen; set by JS */
     --btn-h: calc(var(--margin) * 2.5); 
     --count-closed: calc(var(--margin) * 4); 
+    --caption-gap: calc(var(--margin) * 2);   
     grid-template-rows: 0px 1fr 0fr 0px; 
     transition: grid-template-rows 0.4s ease 0.2s;
     margin-top: var(--count-closed); 
@@ -202,7 +203,7 @@
 
 /* open state: spacing and visibility only exist now, so the closed rows are truly 0 */
 .overview.is-open .text-gallery-caption {
-    margin-top: calc(var(--count-h) + (var(--margin) * 1.5));
+    margin-top: calc(var(--count-h) + (var(--margin) * 2));
     min-height: 4lh;                                    /* three lines of the caption's own line height */
     opacity: 1;
     transition-delay: 0.4s, 0s, 0s;                     /* opacity waits; margin and min-height don't */
@@ -240,6 +241,13 @@
     height: var(--count-h);                       /* open: the full gap above the caption */
     box-shadow: inset 0 -1px 0 var(--text);
     transition-delay: 0s, 0.4s, 0.4s;             /* the height moves with the row; the line fades in after */
+}
+
+/* ONE SLIDE: no number, so the gap collapses to just the line */
+
+.overview.is-single {
+    --count-closed: 0px;                                /* closed: no row under the gallery, so it stays centred */
+    --count-full: 1px;                                  /* open and expanded: the gap is only the 1px line */
 }
 
 /* READING: the caption and its line rise over the gallery */
